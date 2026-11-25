@@ -451,24 +451,19 @@
   <div class="s">
     <span class="kicker">Where · Batch upload</span>
     <h2>批量上傳：題型記得改成「題組」</h2>
-    <div class="g2 grow" style="grid-template-columns:1.25fr 1fr;align-items:stretch">
-      <div class="mock" data-a="left">
-        <span class="mock-tag">示意</span>
-        <div class="mock-title">批量上傳</div>
-        <div class="mock-row"><span class="muted">題型</span><span class="radio">○ 選擇題</span><span class="radio on">● 題組</span></div>
-        <div class="mock-row"><span class="mock-btn ghost">選擇檔案</span><span class="mono small">PaGamO題組_雨水撲滿.xlsx</span></div>
-        <div class="mock-row" style="justify-content:flex-end;margin-top:auto"><span class="mock-btn blue">上傳</span></div>
-      </div>
-      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
-        <div class="card" style="font-size:22px"><span class="num">1</span>登入教師帳號，打開<b>批量上傳</b>頁</div>
-        <div class="card lime" style="font-size:22px"><span class="num">2</span>題型選「<b>題組</b>」（預設是選擇題）</div>
-        <div class="card" style="font-size:22px"><span class="num">3</span>選 Excel 檔（有附圖就一起選）</div>
-        <div class="card" style="font-size:22px"><span class="num">4</span>右下角「上傳」變藍色後按下</div>
+    <div class="g2 grow" style="grid-template-columns:1.3fr 1fr;align-items:center">
+      <div class="shot" data-label="PAGAMO" data-a="left"><img src="images/shots/pagamo-batch.png" alt="PaGamO 個人題庫管理的批量上傳頁：題型可選選擇題、是非題、填充題、題組，下方是選擇檔案區與上傳按鈕" /></div>
+      <div class="stg" style="display:flex;flex-direction:column;gap:9px">
+        <div class="card" style="font-size:21px"><span class="num">1</span>教師後台左側「我的題目 →<b>個人題庫</b>」</div>
+        <div class="card" style="font-size:21px"><span class="num">2</span>「新增題目」→ 上方「<b>批量上傳</b>」分頁</div>
+        <div class="card lime" style="font-size:21px"><span class="num">3</span>題型選「<b>題組</b>」（預設是選擇題）</div>
+        <div class="card" style="font-size:21px"><span class="num">4</span>點選或拖曳 Excel（有附圖一起選），右下角「上傳」</div>
         <a class="qr-cap" href="https://www.pagamo.org/api/teacher_console/questions/add_questions/batch" target="_blank" rel="noopener" style="align-self:flex-start">直接開批量上傳頁 <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
-  <aside class="notes">【15:14–15:19】現場切到 PaGamO 後台實際走一次（只開題庫頁面，不要開到班級或學生資料）。左邊是示意圖，按鈕名稱照 PaGamO 實際畫面。「題組」＝一篇文章帶好幾題；「選擇題」＝單題。用路線 B 下載的 Excel 一定要選「題組」，選錯會檢查失敗。上傳欄位可以一次選多個檔案（xlsx、png、jpg、mp3、zip）。</aside>
+  <aside class="notes">【15:14–15:19】截圖是 11/26 在 PaGamO 實際拍的（講師帳號，題型已點選「題組」）。現場切到後台實際走一次，只開題庫頁，不要開到班級或學生資料。
+「題組」＝一篇文章帶好幾題；「選擇題」＝單題。用路線 B 下載的 Excel 一定要選「題組」，選錯會檢查失敗。畫面上「題目範例檔」可以下載官方題組範本；上傳欄位可以一次選多個檔案（xlsx、png、jpg、mp3、zip）。選好檔案前「上傳」按鈕是灰色的。</aside>
 </section>
 
 <!-- 19 題組 Excel -->
@@ -500,23 +495,18 @@
   <div class="s">
     <span class="kicker">Check · Overview</span>
     <h2>上傳後：到「題目總覽」檢查</h2>
-    <div class="g2 grow" style="grid-template-columns:1.25fr 1fr;align-items:stretch">
-      <div class="mock" data-a="left">
-        <span class="mock-tag">示意</span>
-        <div class="mock-msg">⏳ 正在檢查檔案…</div>
-        <div class="mock-msg ok">✓ 檔案檢查通過，共 N 列，系統正在處理中，預計於 10 分鐘後上傳完畢</div>
-        <div class="mock-title" style="margin-top:6px">題目總覽</div>
-        <div class="mock-cards"><span class="hl">雨水撲滿（新題組）</span><span></span><span></span><span></span></div>
-      </div>
-      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
-        <div class="card" style="font-size:22px">先出現「正在檢查檔案」</div>
-        <div class="card lime" style="font-size:22px">再出現「<b>檔案檢查通過</b>，共 N 列……預計於 10 分鐘後上傳完畢」</div>
-        <div class="card" style="font-size:22px">到<b>題目總覽</b>點題目卡片，右邊打開「查看題目」逐題核對</div>
-        <div class="card coral" style="font-size:22px">要刪除：卡片右邊「…」→「刪除此題」</div>
+    <div class="g2 grow" style="grid-template-columns:1.3fr 1fr;align-items:center">
+      <div class="shot" data-label="PAGAMO" data-a="left"><img src="images/shots/pagamo-overview.png" alt="PaGamO 題目總覽：每張題目卡片有題目 ID、標題、閱讀素養題組 > 115上 > 章節路徑與題組標籤" /></div>
+      <div class="stg" style="display:flex;flex-direction:column;gap:9px">
+        <div class="card" style="font-size:21px">上傳後先顯示「正在檢查檔案」，再出現「<b>檔案檢查通過</b>」</div>
+        <div class="card lime" style="font-size:21px">左側「<b>題目總覽</b>」：卡片有題目 ID、標題、<span class="mono">科目 › 冊次 › 章節</span>和「題組」標籤</div>
+        <div class="card" style="font-size:21px">點題目卡片，右邊打開「查看題目」逐題核對</div>
+        <div class="card coral" style="font-size:21px">要刪除：卡片右邊「…」→「刪除此題」</div>
       </div>
     </div>
   </div>
-  <aside class="notes">【15:24–15:29】實測通常不到 1 分鐘就能在題目總覽看到（畫面寫 10 分鐘是上限）。檢查失敗時 PaGamO 會說哪裡有問題，最常見是題型選錯（選擇題 vs 題組）。用擴充套件送出的題組，會自動跳到這頁並用橘框標出新題目。左邊是示意圖（訊息文字照 PaGamO 實際畫面），現場切到後台實際看一次。</aside>
+  <aside class="notes">【15:24–15:29】截圖是講師自己題庫的題目（11/26 實拍）。卡片上的「閱讀素養題組 › 115上 › 標題」就是擴充套件預設填的科目、冊次、章節。
+檢查通過的訊息寫「預計於 10 分鐘後上傳完畢」，實測通常不到 1 分鐘就看得到。檢查失敗時 PaGamO 會說哪裡有問題，最常見是題型選錯（選擇題 vs 題組）。用擴充套件送出的題組，會自動跳到這頁並用橘框標出新題目。上方搜尋框可以用題目 ID 或題目內容找。</aside>
 </section>
 
 <!-- 22 LoiLoNote -->
