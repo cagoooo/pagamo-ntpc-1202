@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>教學效率升級：PaGamO 實用攻略｜阿凱老師</title>
+  <meta name="description" content="2026.12.02 新北市教師線上研習簡報：用 Chrome 擴充套件「PIRLS 閱讀題組小幫手」與 Gemini 技能＋PaGamO 題組下載器，把好文章變成 PIRLS 四層次閱讀題組，再用 PaGamO 教師後台批量上傳。" />
+  <meta name="author" content="阿凱老師（桃園市龍潭區石門國民小學）" />
+  <meta name="theme-color" content="#0c1014" />
+  <link rel="icon" href="favicon.ico?v=__BUILD_VERSION__" sizes="32x32" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg?v=__BUILD_VERSION__" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=__BUILD_VERSION__" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="canonical" href="https://cagoooo.github.io/pagamo-ntpc-1202/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="教學效率升級：PaGamO 實用攻略" />
+  <meta property="og:locale" content="zh_TW" />
+  <meta property="og:url" content="https://cagoooo.github.io/pagamo-ntpc-1202/" />
+  <meta property="og:title" content="教學效率升級：PaGamO 實用攻略，出題效率翻倍" />
+  <meta property="og:description" content="把好文章變成 PIRLS 四層次閱讀題組，再一鍵送進 PaGamO：擴充套件、教師後台題組上傳、Gemini 技能＋題組下載器。阿凱老師的新北市教師線上研習簡報。" />
+  <meta property="og:image" content="https://cagoooo.github.io/pagamo-ntpc-1202/og-image.jpg?v=__BUILD_VERSION__" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="教學效率升級：PaGamO 實用攻略，出題效率翻倍｜阿凱老師・桃園市龍潭區石門國民小學" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="教學效率升級：PaGamO 實用攻略，出題效率翻倍" />
+  <meta name="twitter:image" content="https://cagoooo.github.io/pagamo-ntpc-1202/og-image.jpg?v=__BUILD_VERSION__" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="css/dash.css?v=__BUILD_VERSION__" />
+</head>
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- 1 封面 -->
+<section data-seg="M00|開場|14:00|14:08" data-nohud>
+  <div class="s cover">
+    <div class="top" data-a><span>NTPC TEACHER WORKSHOP · 2026.12.02 WED 14:00–16:00</span><span>ONLINE · GOOGLE MEET</span></div>
+    <div>
+      <p class="tag" data-a>新北市教師線上研習</p>
+      <h1>教學效率升級<br>PaGamO 實用攻略</h1>
+      <p class="sub" data-a>出題效率翻倍</p>
+    </div>
+    <div class="times" data-a="pop">×2<small>出題效率</small></div>
+    <div>
+      <div class="meter" data-a><span>從文章到題組</span><span class="bar"><i></i></span><span>目標：手動出題的一半時間</span></div>
+      <p class="meta" data-a style="margin-top:14px">講師　<b>阿凱老師（黃凱揚）</b>・桃園市龍潭區石門國民小學 資訊組長・PaGamO Level 3 領航家</p>
+    </div>
+  </div>
+  <aside class="notes">【14:00–14:02】各位新北的老師午安。今天兩個小時，目標只有一個：讓大家回去出 PaGamO 閱讀題組的時間少一半。中間有 15 分鐘實作、10 分鐘休息。互動頁、安裝連結我都會貼在 Meet 聊天室。
+（封面的「×2」是目標，不是實測數據；不要說成「已證實省一半」。）</aside>
+</section>
+
+<!-- 2 今天的儀表板 -->
+<section>
+  <div class="s">
+    <span class="kicker">Today's dashboard</span>
+    <h2>今天的兩個小時</h2>
+    <div class="agenda stg">
+      <div class="row"><span class="t">14:00–14:08</span><span class="m">8′</span><span><b>開場</b>・破冰文字雲</span><span class="w">講述＋互動</span></div>
+      <div class="row"><span class="t">14:08–14:18</span><span class="m">10′</span><span><b>為什麼出題這麼累</b>・PIRLS 四層次</span><span class="w">講述</span></div>
+      <div class="row"><span class="t">14:18–14:45</span><span class="m">27′</span><span><b>單元一</b>　PIRLS 閱讀題組小幫手（擴充套件）</span><span class="w">講述＋示範</span></div>
+      <div class="row hands"><span class="t">14:45–15:00</span><span class="m">15′</span><span><b>實作</b>　現場安裝，用自編短文出 5 題</span><span class="w">動手做</span></div>
+      <div class="row rest"><span class="t">15:00–15:10</span><span class="m">10′</span><span class="muted">休息・安裝問題個別處理</span><span class="w">休息</span></div>
+      <div class="row"><span class="t">15:10–15:35</span><span class="m">25′</span><span><b>單元二</b>　PaGamO 教師後台：上傳題組</span><span class="w">講述＋示範</span></div>
+      <div class="row flex"><span class="t">15:35–15:50</span><span class="m">15′</span><span><b>單元三</b>　Gemini 技能＋題組下載器</span><span class="w">示範（彈性）</span></div>
+      <div class="row"><span class="t">15:50–16:00</span><span class="m">10′</span><span><b>Q&amp;A</b>・會後回饋</span><span class="w">問答＋投票</span></div>
+    </div>
+  </div>
+  <aside class="notes">【14:02–14:03】快速看議程。每一頁上方都有時程列：左邊是現在講到哪一段，右邊是這段的預定時間和現在時間（超時會變橘色，提醒我加快）。單元三是彈性時間，前面拖到就只講流程、給連結。</aside>
+</section>
+
+<!-- 3 講師 -->
+<section>
+  <div class="s">
+    <span class="kicker">Speaker</span>
+    <h2>我是阿凱老師</h2>
+    <div class="g2 grow" style="grid-template-columns:1.3fr 1fr;align-items:start">
+      <div class="stg" style="display:flex;flex-direction:column;gap:14px">
+        <div class="card lime"><h3><i class="ti ti-school"></i> 桃園市龍潭區石門國民小學</h3>資訊組長。學校是「鱻魚特色學園」，每天在第一線用 AI 備課、做教具、處理行政。</div>
+        <div class="card cyan"><h3><i class="ti ti-award"></i> PaGamO Level 3 領航家</h3>在學校推 PaGamO，和大家一樣遇過「題目從哪裡來」的問題。</div>
+        <div class="card amber"><h3><i class="ti ti-tool"></i> 自己動手做工具</h3>好文章到處都是，變成題組卻很花時間，所以做了今天要介紹的兩個小工具。</div>
+      </div>
+      <div class="card" data-a="right" style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+        <span class="tag">MORE TOOLS</span>
+        <div class="qr-static" id="qr-akai"></div>
+        <b style="font-size:26px">阿凱老師教育科技創新專區</b>
+        <a href="https://cagoooo.github.io/Akai/" target="_blank" rel="noopener" class="qr-cap">cagoooo.github.io/Akai <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【14:03–14:04】簡短自我介紹就好，重點放在「我跟大家一樣在學校推 PaGamO」。</aside>
+</section>
+
+<!-- 4 破冰文字雲 -->
+<section id="slide-wc-open">
+  <div class="s">
+    <span class="kicker">Warm-up <span class="live">LIVE</span></span>
+    <h2 class="wc-q-title">出一份閱讀題組，最花時間的是哪一步？</h2>
+    <div class="wc grow" data-key="open">
+      <div class="wc-side">
+        <div class="join"><div class="qr" data-key="open"></div><a class="qr-url" target="_blank" rel="noopener"></a></div>
+        <div class="wc-form"><input type="text" maxlength="20" aria-label="輸入答案" /><button class="btn wc-send" type="button">送出</button></div>
+        <div class="small">已收到 <b class="wc-total">0</b> 則</div>
+        <ul class="wc-list"></ul>
+        <span class="wc-q" hidden></span>
+        <span class="offline-note">本機預覽：互動功能部署後才會連線</span>
+      </div>
+      <div class="wc-stage"><canvas></canvas><div class="wc-empty">點 Meet 聊天室的連結<br>輸入一個詞，文字雲就會長出來</div></div>
+    </div>
+  </div>
+  <aside class="notes">【14:04–14:08】按下方「一鍵複製全部連結」或直接把左邊網址（join.html#open）貼到 Meet 聊天室。等 2～3 分鐘，挑幾個詞回應：大家卡住的地方，就是今天要解決的事。</aside>
+</section>
+
+<!-- 5 痛點 -->
+<section data-seg="M01|為什麼出題這麼累|14:08|14:18">
+  <div class="s">
+    <span class="kicker">Pain points</span>
+    <h2>好文章到處都有，題組很難出</h2>
+    <div class="g3 grow stg big-ic" style="align-items:stretch">
+      <div class="card coral icard"><span class="tag">01</span><i class="ti ti-keyboard ti-big"></i><h3>文字要重打</h3><p>電子書、PDF、學習單常常不能複製，只好一個字一個字打。</p></div>
+      <div class="card amber icard"><span class="tag">02</span><i class="ti ti-stairs-up ti-big"></i><h3>四個層次難兼顧</h3><p>找答案的題目好出；要推論、統整、評論的題目最花腦力。</p></div>
+      <div class="card cyan icard"><span class="tag">03</span><i class="ti ti-table-import ti-big"></i><h3>上傳格式麻煩</h3><p>批量上傳範本欄位固定，文章、題目、選項、答案要一格一格貼。</p></div>
+    </div>
+  </div>
+  <aside class="notes">【14:08–14:11】呼應剛才的文字雲。這三個卡點，剛好對應今天兩個工具做的三件事：讀文字、照層次出題、轉成 PaGamO 格式。</aside>
+</section>
+
+<!-- 6 PIRLS 四層次 -->
+<section>
+  <div class="s">
+    <span class="kicker">PIRLS · 4 levels</span>
+    <h2>PIRLS 四個理解層次</h2>
+    <div class="g4 stg" style="align-items:stretch">
+      <div class="card lime icard"><span class="tag">L1</span><i class="ti ti-search ti-big"></i><h3>訊息提取</h3><p>找出文中明確寫出的資訊</p></div>
+      <div class="card lime icard"><span class="tag">L2</span><i class="ti ti-bulb ti-big"></i><h3>直接推論</h3><p>把前後文連起來，推出沒直接寫的事</p></div>
+      <div class="card cyan icard"><span class="tag">L3</span><i class="ti ti-puzzle ti-big"></i><h3>詮釋整合</h3><p>統整全文，理解主旨、人物感受</p></div>
+      <div class="card cyan icard"><span class="tag">L4</span><i class="ti ti-scale ti-big"></i><h3>評估批判</h3><p>評論內容、寫法與作者觀點</p></div>
+    </div>
+    <table class="t" data-a>
+      <tr><th>擴充套件的題數</th><th>L1</th><th>L2</th><th>L3</th><th>L4</th></tr>
+      <tr><td>5 題（快速）</td><td class="hi">2</td><td>1</td><td>1</td><td>1</td></tr>
+      <tr><td>8 題（標準，預設）</td><td>2</td><td>2</td><td>2</td><td>2</td></tr>
+      <tr><td>10 題（延伸）</td><td class="hi">3</td><td class="hi">3</td><td>2</td><td>2</td></tr>
+    </table>
+  </div>
+  <aside class="notes">【14:11–14:14】大家都熟，快速帶過。重點是後兩層最難出，也是 AI 最能幫忙起草、老師最需要把關的地方。表格是擴充套件的配比（滑鼠停在題數按鈕上會看到同樣的說明）。等一下 Gemini 技能的配比略有不同，單元三再講。</aside>
+</section>
+
+<!-- 7 兩條路 -->
+<section>
+  <div class="s">
+    <span class="kicker">Two routes</span>
+    <h2>今天的兩條路，終點都是 PaGamO</h2>
+    <div class="route stg">
+      <div class="lane"><span class="who" style="color:var(--lime)">路線 A<br><small class="muted" style="font-size:19px">擴充套件</small></span>
+        <span class="pill">網頁截圖、全文、反白、YouTube、雲端 PDF</span><span class="to">›</span>
+        <span class="pill">小幫手依 PIRLS 出題</span><span class="to">›</span>
+        <span class="pill">老師檢查修改</span><span class="to">›</span>
+        <span class="pill end">自動上傳到 PaGamO</span></div>
+      <div class="lane"><span class="who" style="color:var(--cyan)">路線 B<br><small class="muted" style="font-size:19px">Gemini 技能</small></span>
+        <span class="pill">在 Gemini 貼文章、照片或 PDF</span><span class="to">›</span>
+        <span class="pill">@技能 出題，得到題組資料</span><span class="to">›</span>
+        <span class="pill">題組下載器轉成 Excel</span><span class="to">›</span>
+        <span class="pill end">PaGamO 批量上傳</span></div>
+    </div>
+    <div class="g2" data-a style="margin-top:6px">
+      <div class="card lime small"><b>A 適合：</b>能在自己的電腦裝 Chrome 擴充套件，想一路自動做到上傳。</div>
+      <div class="card cyan small"><b style="color:var(--cyan)">B 適合：</b>不方便裝擴充套件，或習慣在 Gemini 裡工作。</div>
+    </div>
+  </div>
+  <aside class="notes">【14:14–14:18】先給全貌：兩條路的終點一樣，都是 PaGamO 的「題組」。單元一、實作走路線 A；單元二講 PaGamO 後台（兩條路都會用到）；單元三講路線 B。</aside>
+</section>
+
+<!-- 8 單元一章節 -->
+<section data-seg="M02|單元一：PIRLS 閱讀題組小幫手|14:18|14:45">
+  <div class="s chapter">
+    <span class="no">01</span>
+    <h2>PIRLS 閱讀題組小幫手</h2>
+    <p class="sub" data-a>Chrome 擴充套件・免費・用老師自己的 Gemini 金鑰</p>
+    <div class="flow stg" style="margin-top:6px">
+      <div class="step"><i class="ti ti-file-text"></i><b>素材</b>網頁上的文章</div>
+      <div class="arrow">›</div>
+      <div class="step"><i class="ti ti-sparkles"></i><b>出題</b>依 PIRLS 四層次</div>
+      <div class="arrow">›</div>
+      <div class="step"><i class="ti ti-edit"></i><b>檢查</b>老師逐題把關</div>
+      <div class="arrow">›</div>
+      <div class="step"><i class="ti ti-upload"></i><b>送出</b>自動上傳 PaGamO</div>
+    </div>
+    <div class="cta-row" data-a>
+      <a class="qr-cap primary" href="https://cagoooo.github.io/pirls-questioncraft/extension/" target="_blank" rel="noopener">擴充套件介紹與安裝 <span aria-hidden="true">↗</span></a>
+      <a class="qr-cap" href="https://chromewebstore.google.com/detail/cfbehdinangicblpbnockoofeccmoidp" target="_blank" rel="noopener">直接到 Chrome 商店 <span aria-hidden="true">↗</span></a>
+      <button class="chat-copy" type="button">📋 一鍵複製全部連結</button>
+    </div>
+  </div>
+  <aside class="notes">【14:18–14:20】這頁一出現就按「一鍵複製全部連結」貼到 Meet 聊天室，大家可以邊聽邊裝（實作時間會再帶一次）。金鑰是老師自己的，只存在自己的電腦。</aside>
+</section>
+
+<!-- 9 素材入口 -->
+<section>
+  <div class="s">
+    <span class="kicker">Step 1 · Input</span>
+    <h2>五種方法，把文章交給小幫手</h2>
+    <div class="g2 grow" style="grid-template-columns:.62fr 1.38fr;align-items:center">
+      <div class="shot" data-label="POPUP" data-a="left"><img src="images/shots/step-popup.webp" alt="擴充套件小視窗：截取這個畫面、讀取這頁全文、開啟工作台、設定與金鑰" /></div>
+      <div class="stg" style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div class="card lime" style="font-size:21px"><h3 style="font-size:24px"><i class="ti ti-camera"></i> 截取這個畫面</h3>電子書、PDF 都行，到工作台框出文章範圍；快捷鍵 <b class="mono">Alt+Shift+P</b>。</div>
+        <div class="card lime" style="font-size:21px"><h3 style="font-size:24px"><i class="ti ti-book"></i> 讀取這頁全文</h3>新聞、部落格最好用，一鍵帶入正文。</div>
+        <div class="card cyan" style="font-size:21px"><h3 style="font-size:24px"><i class="ti ti-highlight"></i> 反白文字</h3>反白一段，按右鍵「用這段文字出 PIRLS 題組」。</div>
+        <div class="card cyan" style="font-size:21px"><h3 style="font-size:24px"><i class="ti ti-brand-youtube"></i> YouTube 影片</h3>影片頁按「用這部影片出題」，只能用公開影片，可只選一段。</div>
+        <div class="card amber" style="font-size:21px;grid-column:1/-1"><h3 style="font-size:24px"><i class="ti ti-brand-google-drive"></i> 雲端硬碟 PDF（0.10.11 起）</h3>在 PDF 預覽頁按「讀取這頁全文」，會自動翻完全部頁面再讀，約 10～20 秒。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【14:20–14:24】五個入口各講一句。截圖最適合不能複製文字的電子書和 PDF，最多 10 張，可以勾選讓題組附上原始截圖。YouTube 題組會附「觀看影片」連結，閱讀引導會寫出時間點；超過 20 分鐘的影片建議只選一段。也可以在工作台直接貼文字或貼圖片。
+雲端硬碟 PDF 是 0.10.11 的新功能：研習前確認商店版本（chrome://extensions），若還沒上架就改口說「下一版會有」。</aside>
+</section>
+
+<!-- 10 出題設定 -->
+<section>
+  <div class="s">
+    <span class="kicker">Step 2 · Settings</span>
+    <h2>出題前的三個選擇</h2>
+    <div class="g3 grow stg" style="align-items:stretch">
+      <div class="card lime">
+        <span class="tag">適讀年級</span>
+        <h3>原文，或改寫成一～六年級</h3>
+        <div class="small muted" style="line-height:1.7">一年級 約 150～300 字<br>三年級 約 400～650 字<br>四年級 約 600～900 字<br>六年級 約 900～1400 字</div>
+        <div class="small" style="margin-top:8px">選了年級，AI 先把文章<b>改寫成該年級讀得懂的版本</b>，再依同一年級出題。</div>
+      </div>
+      <div class="card cyan">
+        <span class="tag">題數</span>
+        <h3>5／8／10 題</h3>
+        <div class="kpi" style="margin:10px 0"><span class="n">8<small>題</small></span><span class="l">預設：四層次各 2 題</span></div>
+        <div class="small muted">短文或暖身用 5 題，長文用 10 題。</div>
+      </div>
+      <div class="card amber">
+        <span class="tag">語言</span>
+        <h3>中文／英文題目</h3>
+        <div class="small" style="margin-top:8px">英文課也能用同一套流程。</div>
+        <div class="small muted" style="margin-top:12px">每題固定 <b>4 個選項</b>；四層次配錯時，小幫手會自動重出一次。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【14:24–14:26】適讀年級是很多老師最喜歡的功能：同一篇新聞，低年級也能用。注意改寫過的文章不會附原始截圖（因為文字已經不一樣了）。年級字數範圍是擴充套件裡的設定說明，二、五年級沒列出來，現場可以打開下拉選單給大家看。</aside>
+</section>
+
+<!-- 11 現場示範 -->
+<section>
+  <div class="s">
+    <span class="kicker">Live demo <span class="live demo">DEMO</span></span>
+    <h2>從一篇短文到 PaGamO 題目總覽</h2>
+    <div class="task">
+      <div class="card lime">
+        <ol class="stg">
+          <li>打開自編短文〈雨水撲滿〉（練習頁）</li>
+          <li>按工具列圖示 →「<b>📖 讀取這頁全文</b>」</li>
+          <li>選 <b>5 題</b>、適讀年級「四年級」→「✨ 開始出題」</li>
+          <li>逐題看，<b>示範改一題</b>（改完自動儲存）</li>
+          <li>按「<b>🚀 送到 PaGamO（題組版，建議）</b>」</li>
+          <li>倒數 5 秒自動「上傳」→ 跳到<b>題目總覽</b>，橘框標出新題組</li>
+        </ol>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="timer" data-min="10" data-a="pop">
+          <span class="lbl">DEMO TIMER</span>
+          <span class="timer-num">10:00</span>
+          <div class="btns"><button class="btn" data-t="go" type="button">開始／暫停</button><button class="btn ghost" data-t="plus" type="button">＋1 分</button><button class="btn ghost" data-t="reset" type="button">重設</button></div>
+        </div>
+        <a class="qr-cap" href="practice.html" target="_blank" rel="noopener" style="justify-content:center">開啟練習短文〈雨水撲滿〉 <span aria-hidden="true">↗</span></a>
+        <div class="card small">Meet 只分享 <b>Chrome 分頁</b>；示範用自編短文，畫面不出現學生資料。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【14:26–14:36】按「開始」計時。Meet 分享「Chrome 分頁」，不要分享整個螢幕。
+事前準備：① 擴充套件更新到最新版 ② 金鑰已測試成功 ③ PaGamO 教師帳號已登入 ④ 練習短文頁先開好（研習當天也提醒新北老師：PaGamO 要從「新北市親師生平台」pts.ntpc.edu.tw 登入） ⑤ 備案：網路卡住就播教學影片 https://youtu.be/Pn3XxfHRySw。
+示範時口頭提醒：放好檔案後倒數 5 秒自動按「上傳」，想先檢查可以按「先不要，我自己按」；PaGamO 檢查通過後自動跳到題目總覽，用橘框標出剛上傳的題組。示範完的題組，研習後記得到題目總覽刪掉（卡片右邊「…」→刪除此題）。</aside>
+</section>
+
+<!-- 12 老師把關 -->
+<section>
+  <div class="s">
+    <span class="kicker">Step 3 · Review</span>
+    <h2>AI 出題，老師把關</h2>
+    <div class="g2 grow" style="grid-template-columns:1fr 1.1fr;align-items:stretch">
+      <div class="shot tall" data-label="WORKBENCH" data-a="left"><img src="images/shots/step-review.webp" alt="工作台：逐題檢查與修改題目，可改題幹、選項、正解、閱讀引導與 PIRLS 層次" /></div>
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card cyan" style="font-size:21px"><b style="color:var(--cyan)">閱讀引導</b>（學生作答後看到）：只說回到哪一段、找什麼，<b>不說出答案</b>。</div>
+        <div class="card amber" style="font-size:21px"><b style="color:var(--amber)">🔍 答案依據</b>：只有老師看得到、不會匯出，用來核對正解。</div>
+        <div class="card lime" style="font-size:21px;display:flex;flex-direction:column;gap:4px">
+          <b>送出前看這五件事</b>
+          <div>① 題幹看得懂，只有一個正解</div>
+          <div>② 正解在文章裡找得到線索</div>
+          <div>③ 選項長度差不多，猜不出答案</div>
+          <div>④ 閱讀引導沒有洩漏答案</div>
+          <div>⑤ PIRLS 層次標對了（可以改）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【14:36–14:40】今天最重要的觀念：AI 出的題一定要老師看過再派給學生。答案依據是用來核對正解的：AI 偶爾會把正解標錯，對一下「答案依據」和打勾的選項是不是同一件事。題幹、選項、正解、閱讀引導、層次都能直接改，改完自動儲存，關掉分頁也不會不見。截圖是 11 月中的版本，現在多了「答案依據」欄位。</aside>
+</section>
+
+<!-- 13 一鍵送出 -->
+<section>
+  <div class="s">
+    <span class="kicker">Step 4 · Send</span>
+    <h2>一鍵送到 PaGamO</h2>
+    <div class="g2 grow" style="grid-template-columns:1.15fr 1fr;align-items:center">
+      <div class="shot" data-label="EXPORT" data-a="left"><img src="images/shots/step-send.webp" alt="匯出區：科目、冊次、章節，選項順序隨機，送到 PaGamO 題組版按鈕" /></div>
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card" style="font-size:23px"><span class="num">1</span>先下載一份備份到電腦</div>
+        <div class="card" style="font-size:23px"><span class="num">2</span>自動打開 PaGamO 批量上傳頁</div>
+        <div class="card" style="font-size:23px"><span class="num">3</span>自動選好「題組」、放好檔案</div>
+        <div class="card lime" style="font-size:23px"><span class="num">4</span>倒數 5 秒自動「上傳」，跳到<b>題目總覽</b></div>
+        <div class="small amber-t">新北老師：先用<b>新北市帳號</b>登入 PaGamO 再按送出。</div>
+        <div class="small muted">科目預設「閱讀素養題組」、冊次自動填學期（如 115上）、章節＝文章標題；選項順序預設<b>隨機</b>。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【14:40–14:45】還沒登入 PaGamO 時會先跳登入頁，擴充套件會等 10 分鐘，登入後自動回到上傳頁放好檔案；但新北老師是從新北市親師生平台登入，這條路沒實測過，請大家出題前就先登入好（單元二有登入路徑）。選項隨機：每位學生看到的順序不同。若選項有「以上皆是」，記得把選項順序切成「固定」。自動放檔沒成功時，工作台有「手動匯入步驟」摺疊說明，也可以按「⬇️ 題組版」只下載檔案，單元二會教怎麼手動上傳。</aside>
+</section>
+
+<!-- 14 實作 -->
+<section data-seg="M03|實作：現場安裝＋出 5 題|14:45|15:00">
+  <div class="s">
+    <span class="kicker">Hands-on <span class="live hands">15 MIN</span></span>
+    <h2>現在換你：裝起來，出 5 題</h2>
+    <div class="task">
+      <div class="card lime">
+        <ol class="stg">
+          <li>到 Chrome 商店按「<b>加到 Chrome</b>」，再按右上角拼圖圖示把小幫手<b>釘選</b></li>
+          <li>用<b>個人 Gmail</b> 到 Google AI Studio 申請金鑰（不要用學校信箱）</li>
+          <li>小幫手「⚙️ 設定與金鑰」貼上金鑰 →「<b>💾 儲存並測試</b>」</li>
+          <li>開練習短文〈雨水撲滿〉→「📖 讀取這頁全文」→ <b>5 題</b> → 開始出題</li>
+          <li>完成後到互動頁回報進度（休息時會看結果）</li>
+        </ol>
+        <div class="cta-row" style="margin-top:12px">
+          <a class="qr-cap primary" href="https://chromewebstore.google.com/detail/cfbehdinangicblpbnockoofeccmoidp" target="_blank" rel="noopener">加到 Chrome <span aria-hidden="true">↗</span></a>
+          <a class="qr-cap" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">申請金鑰 <span aria-hidden="true">↗</span></a>
+          <a class="qr-cap" href="practice.html" target="_blank" rel="noopener">練習短文 <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div class="timer" data-min="15" data-a="pop">
+          <span class="lbl">HANDS-ON</span>
+          <span class="timer-num">15:00</span>
+          <div class="btns"><button class="btn" data-t="go" type="button">開始／暫停</button><button class="btn ghost" data-t="plus" type="button">＋1 分</button><button class="btn ghost" data-t="reset" type="button">重設</button></div>
+        </div>
+        <p class="qr-hint"><button class="chat-copy" type="button">📋 一鍵複製全部連結</button> 貼到 Meet 聊天室</p>
+        <div class="card amber small">今天先不用送到 PaGamO；出好題、看過一遍就算完成。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【14:45–15:00】按「一鍵複製全部連結」貼到聊天室，再按計時器。我會一直開著麥克風，有問題直接在聊天室打「卡在第幾步」。
+最常見的三個卡點：① 學校電腦不能從商店安裝（下一頁有解法）② 用學校信箱申請金鑰（免費額度用不了）③ 忘了釘選，找不到圖示。
+「先不送 PaGamO」是為了避免大家的題庫多出練習題；想送的老師可以送，之後在題目總覽刪掉就好。</aside>
+</section>
+
+<!-- 15 卡關排除 -->
+<section>
+  <div class="s">
+    <span class="kicker">Troubleshooting</span>
+    <h2>卡住了？先看這裡</h2>
+    <table class="t stg" style="font-size:21px">
+      <tr><th style="width:330px">狀況</th><th>怎麼辦</th></tr>
+      <tr><td>學校電腦不能從商店安裝</td><td>說明頁有<b>手動安裝</b>步驟；或回家用自己的電腦裝。也可以改走單元三的 Gemini 技能。</td></tr>
+      <tr><td>找不到小幫手圖示</td><td>按 Chrome 右上角<b>拼圖圖示</b>，把「PIRLS 閱讀題組小幫手」釘到工具列。</td></tr>
+      <tr><td>金鑰測試沒成功</td><td>確認是用<b>個人 Gmail</b> 申請、複製完整（不多空白）；再按一次「💾 儲存並測試」。</td></tr>
+      <tr><td>讀全文抓到的字太少</td><td>網頁文字少於 80 字時會提醒你改用「📷 截取這個畫面」。</td></tr>
+      <tr><td>共用電腦用完</td><td>到設定頁按「🧹 清除金鑰」。</td></tr>
+    </table>
+    <div class="cta-row" data-a>
+      <a class="qr-cap primary" href="https://cagoooo.github.io/pirls-questioncraft/extension/" target="_blank" rel="noopener">圖文說明（含手動安裝） <span aria-hidden="true">↗</span></a>
+      <a class="qr-cap" href="https://youtu.be/Pn3XxfHRySw" target="_blank" rel="noopener">約 5 分鐘教學影片 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <aside class="notes">實作時間停在這頁也可以。金鑰只存在老師自己的電腦（Chrome 擴充套件的儲存區），只有出題時才會送到 Google Gemini。教學影片是 11 月初錄的基本操作，新功能（YouTube、適讀年級、自動上傳）影片裡沒有。</aside>
+</section>
+
+<!-- 16 休息＋進度回報 -->
+<section id="slide-poll-setup" data-seg="M04|休息|15:00|15:10">
+  <div class="s">
+    <span class="kicker">Break · 10 min <span class="live">LIVE</span></span>
+    <h2 class="poll-q-title">休息一下：你的實作做到哪一步？</h2>
+    <div class="poll grow" data-key="setup">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="poll-opts"></div>
+        <div class="timer" data-min="10" style="flex-direction:row;padding:12px 18px;gap:18px">
+          <span class="lbl">BREAK</span><span class="timer-num" style="font-size:56px">10:00</span>
+          <div class="btns"><button class="btn" data-t="go" type="button">開始／暫停</button><button class="btn ghost" data-t="plus" type="button">＋1 分</button><button class="btn ghost" data-t="reset" type="button">重設</button></div>
+        </div>
+      </div>
+      <div class="join">
+        <div class="qr" data-key="setup"></div><a class="qr-url" target="_blank" rel="noopener"></a>
+        <div class="small" style="margin-top:8px">已回報 <b class="poll-total">0</b> 人</div>
+        <span class="poll-q" hidden></span>
+        <span class="offline-note">本機預覽：互動功能部署後才會連線</span>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:00–15:10】按計時器開始休息。把 join.html#setup 貼到聊天室，請大家回報。休息時看結果：「學校電腦不能安裝」的老師多，就在單元三多花一點時間；「金鑰沒成功」的老師，休息時在聊天室個別處理。</aside>
+</section>
+
+<!-- 17 單元二章節 -->
+<section data-seg="M05|單元二：PaGamO 教師後台上傳題組|15:10|15:35">
+  <div class="s chapter">
+    <span class="no">02</span>
+    <h2>PaGamO 教師後台：上傳題組</h2>
+    <p class="sub" data-a>不管走哪一條路，最後都是這個畫面</p>
+    <div class="g3 stg" style="margin-top:8px;width:100%">
+      <div class="card lime"><span class="tag">WHERE</span><h3>批量上傳頁在哪裡</h3></div>
+      <div class="card cyan"><span class="tag">FORMAT</span><h3>題組 Excel 長什麼樣</h3></div>
+      <div class="card amber"><span class="tag">CHECK</span><h3>上傳後怎麼檢查</h3></div>
+    </div>
+  </div>
+  <aside class="notes">【15:10–15:12】擴充套件會自動做完這些步驟，但老師還是要知道它在後台做了什麼：自動放檔失敗、或用路線 B 的時候，就要自己來。</aside>
+</section>
+
+<!-- 17b 新北老師登入 PaGamO -->
+<section>
+  <div class="s">
+    <span class="kicker">Login · NTPC</span>
+    <h2>新北老師：從「新北市親師生平台」登入</h2>
+    <div class="shot" data-a style="padding:6px"><img src="images/shots/pts-header.jpg" alt="新北市親師生平台首頁上方，右上角有登入按鈕" style="width:100%" /></div>
+    <div class="g2 grow" style="grid-template-columns:1fr 1fr;align-items:start">
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card" style="font-size:22px"><span class="num">1</span>打開 <b class="mono">pts.ntpc.edu.tw</b>，按右上角「<b>登入</b>」</div>
+        <div class="card lime" style="font-size:22px"><span class="num">2</span>用新北市帳號登入後，從平台進入 <b>PaGamO</b></div>
+        <a class="qr-cap primary" href="https://pts.ntpc.edu.tw/" target="_blank" rel="noopener" style="align-self:flex-start">打開新北市親師生平台 <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card amber" style="font-size:22px"><b style="color:var(--amber)">出題前就先登入好</b>：擴充套件按「送到 PaGamO」時，同一個 Chrome 已登入 PaGamO 最順。</div>
+        <div class="card small muted">桃園等其他縣市的登入方式不一樣，以各縣市平台為準。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:12–15:14】新北老師登入 PaGamO 是從「新北市親師生平台」pts.ntpc.edu.tw 右上角登入，再從平台進 PaGamO（跟講師所在的桃園不一樣，現場請新北的老師幫忙確認入口位置）。
+為什麼要先登入：擴充套件按「送到 PaGamO」時，如果還沒登入會先跳登入頁；經過新北平台轉一圈，有可能回不到上傳頁（這條路沒實測過）。最保險的做法是出題前先在同一個 Chrome 登入 PaGamO，再按送出。</aside>
+</section>
+
+<!-- 18 批量上傳頁 -->
+<section>
+  <div class="s">
+    <span class="kicker">Where · Batch upload</span>
+    <h2>批量上傳：題型記得改成「題組」</h2>
+    <div class="g2 grow" style="grid-template-columns:1.25fr 1fr;align-items:stretch">
+      <div class="mock" data-a="left">
+        <span class="mock-tag">示意</span>
+        <div class="mock-title">批量上傳</div>
+        <div class="mock-row"><span class="muted">題型</span><span class="radio">○ 選擇題</span><span class="radio on">● 題組</span></div>
+        <div class="mock-row"><span class="mock-btn ghost">選擇檔案</span><span class="mono small">PaGamO題組_雨水撲滿.xlsx</span></div>
+        <div class="mock-row" style="justify-content:flex-end;margin-top:auto"><span class="mock-btn blue">上傳</span></div>
+      </div>
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card" style="font-size:22px"><span class="num">1</span>登入教師帳號，打開<b>批量上傳</b>頁</div>
+        <div class="card lime" style="font-size:22px"><span class="num">2</span>題型選「<b>題組</b>」（預設是選擇題）</div>
+        <div class="card" style="font-size:22px"><span class="num">3</span>選 Excel 檔（有附圖就一起選）</div>
+        <div class="card" style="font-size:22px"><span class="num">4</span>右下角「上傳」變藍色後按下</div>
+        <a class="qr-cap" href="https://www.pagamo.org/api/teacher_console/questions/add_questions/batch" target="_blank" rel="noopener" style="align-self:flex-start">直接開批量上傳頁 <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:14–15:19】現場切到 PaGamO 後台實際走一次（只開題庫頁面，不要開到班級或學生資料）。左邊是示意圖，按鈕名稱照 PaGamO 實際畫面。「題組」＝一篇文章帶好幾題；「選擇題」＝單題。用路線 B 下載的 Excel 一定要選「題組」，選錯會檢查失敗。上傳欄位可以一次選多個檔案（xlsx、png、jpg、mp3、zip）。</aside>
+</section>
+
+<!-- 19 題組 Excel -->
+<section>
+  <div class="s">
+    <span class="kicker">Format · Template</span>
+    <h2>題組 Excel：一篇文章＋好幾題</h2>
+    <div class="g2 grow" style="grid-template-columns:1.2fr 1fr;align-items:start">
+      <table class="t stg" style="font-size:20px">
+        <tr><th>編號</th><th>這一列放什麼</th></tr>
+        <tr><td class="hi" style="color:var(--lime)">1</td><td>題組本身：科目、冊次、章節、難度、<b>標題</b>、<b>內容（文章）</b>、內容附圖</td></tr>
+        <tr><td>1_1</td><td>第 1 題：題目、選項 A～E、正確答案、文字解說、選項排列</td></tr>
+        <tr><td>1_2</td><td>第 2 題……</td></tr>
+        <tr><td class="hi" style="color:var(--lime)">2</td><td>下一篇文章（一個檔案可放好幾篇）</td></tr>
+      </table>
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card lime" style="font-size:21px"><b>不用自己填</b>：擴充套件和題組下載器都會用 PaGamO 官方題組範本自動填好。</div>
+        <div class="card" style="font-size:21px">正確答案填字母（A～E）；選項排列 <span class="mono">v</span>＝打亂、<span class="mono">x</span>＝固定。</div>
+        <div class="card" style="font-size:21px">文章附圖：在「內容多媒體檔名」填檔名，圖片和 Excel <b>一起選</b>上傳；PaGamO 會把圖縮成 600 像素寬。</div>
+        <div class="card amber" style="font-size:21px">一次上傳最多 <b style="color:var(--amber)">1,000 列</b>。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:19–15:24】讓大家看懂檔案結構就好，不用背。擴充套件的「⬇️ 題組版」和題組下載器做出來的都是這個格式。截圖出題附原圖時，擴充套件會把圖片和 Excel 一起打包成 zip。</aside>
+</section>
+
+<!-- 20 上傳後檢查 -->
+<section>
+  <div class="s">
+    <span class="kicker">Check · Overview</span>
+    <h2>上傳後：到「題目總覽」檢查</h2>
+    <div class="g2 grow" style="grid-template-columns:1.25fr 1fr;align-items:stretch">
+      <div class="mock" data-a="left">
+        <span class="mock-tag">示意</span>
+        <div class="mock-msg">⏳ 正在檢查檔案…</div>
+        <div class="mock-msg ok">✓ 檔案檢查通過，共 N 列，系統正在處理中，預計於 10 分鐘後上傳完畢</div>
+        <div class="mock-title" style="margin-top:6px">題目總覽</div>
+        <div class="mock-cards"><span class="hl">雨水撲滿（新題組）</span><span></span><span></span><span></span></div>
+      </div>
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card" style="font-size:22px">先出現「正在檢查檔案」</div>
+        <div class="card lime" style="font-size:22px">再出現「<b>檔案檢查通過</b>，共 N 列……預計於 10 分鐘後上傳完畢」</div>
+        <div class="card" style="font-size:22px">到<b>題目總覽</b>點題目卡片，右邊打開「查看題目」逐題核對</div>
+        <div class="card coral" style="font-size:22px">要刪除：卡片右邊「…」→「刪除此題」</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:24–15:29】實測通常不到 1 分鐘就能在題目總覽看到（畫面寫 10 分鐘是上限）。檢查失敗時 PaGamO 會說哪裡有問題，最常見是題型選錯（選擇題 vs 題組）。用擴充套件送出的題組，會自動跳到這頁並用橘框標出新題目。左邊是示意圖（訊息文字照 PaGamO 實際畫面），現場切到後台實際看一次。</aside>
+</section>
+
+<!-- 22 LoiLoNote -->
+<section>
+  <div class="s">
+    <span class="kicker">Bonus · LoiLoNote</span>
+    <h2>同一份題組，也能變 LoiLoNote 測驗卡</h2>
+    <div class="g2 grow" style="grid-template-columns:1fr 1fr;align-items:start">
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card lime" style="font-size:22px"><b>⬇️ 下載 LoiLoNote 題組檔</b>：只有題目，文章另外發給學生</div>
+        <div class="card cyan" style="font-size:22px"><b style="color:var(--cyan)">⬇️ 含文章版（新版格式）</b>：文章放在最前面，讀完再作答；超過 1000 字自動分段</div>
+        <div class="card" style="font-size:22px">下載後自動開 LoiLoNote 新分頁 → 測驗卡「…」→「<b>文件匯入</b>」→「使用此文件創建」</div>
+      </div>
+      <div class="shot" data-label="LOILONOTE" data-a="right"><img src="images/shots/shot-loilo.jpg" alt="工作台的 LoiLoNote 測驗卡匯出區塊" /></div>
+    </div>
+  </div>
+  <aside class="notes">【15:29–15:32】新北有用 LoiLoNote 的學校，同一份題組不用重出。自動開新分頁是 0.10.10 的新功能。</aside>
+</section>
+
+<!-- 23 前後對比 -->
+<section>
+  <div class="s">
+    <span class="kicker">Before / After · 拖拉下方滑桿</span>
+    <h2>同一篇文章，出題流程的轉變</h2>
+    <div class="viz" data-a>
+      <div class="viz-before">
+        <h3>以前：全部自己來</h3>
+        <ul>
+          <li>找文章，不能複製就自己打字</li>
+          <li>自己想題目，還要兼顧四個層次</li>
+          <li>下載批量上傳範本，一格一格貼文章、題目、選項、答案</li>
+          <li>選題型、上傳，格式錯了再重來</li>
+        </ul>
+      </div>
+      <div class="viz-after">
+        <h3 style="color:var(--lime)">現在：老師當總編輯</h3>
+        <ul>
+          <li>在文章頁按一下，讀取全文或截圖</li>
+          <li>AI 依四個層次起草，<b>附閱讀引導</b></li>
+          <li>老師逐題檢查、修改，<b>把關品質</b></li>
+          <li>一鍵送到 PaGamO，<b>自動上傳、標出新題組</b></li>
+        </ul>
+      </div>
+      <div class="viz-line"></div>
+      <span class="viz-tag l">BEFORE</span><span class="viz-tag r">AFTER</span>
+    </div>
+    <input class="viz-range" type="range" min="0" max="100" value="78" aria-label="前後對比滑桿" />
+  </div>
+  <aside class="notes">【15:32–15:35】拖滑桿對比。省下的時間，拿去挑好文章、看學生作答結果。（這頁只比流程，沒有計時數據。）</aside>
+</section>
+
+<!-- 24 單元三章節 -->
+<section data-seg="M06|單元三：Gemini 技能＋題組下載器|15:35|15:50">
+  <div class="s chapter">
+    <span class="no">03</span>
+    <h2>Gemini 技能＋題組下載器</h2>
+    <p class="sub" data-a>不裝擴充套件，也能做出 PaGamO 題組</p>
+    <div class="flow stg" style="margin-top:6px">
+      <div class="step"><i class="ti ti-download"></i><b>裝技能</b>只要做一次</div>
+      <div class="arrow">›</div>
+      <div class="step"><i class="ti ti-at"></i><b>@技能出題</b>貼文章、照片、PDF</div>
+      <div class="arrow">›</div>
+      <div class="step"><i class="ti ti-file-spreadsheet"></i><b>下載 Excel</b>貼進題組下載器</div>
+      <div class="arrow">›</div>
+      <div class="step"><i class="ti ti-upload"></i><b>上傳</b>PaGamO 選「題組」</div>
+    </div>
+    <div class="cta-row c" data-a>
+      <a class="qr-cap primary" href="https://cagoooo.github.io/pagamo-gemini/skill.html" target="_blank" rel="noopener">下載技能＋安裝教學 <span aria-hidden="true">↗</span></a>
+      <a class="qr-cap" href="https://cagoooo.github.io/pagamo-gemini/" target="_blank" rel="noopener">PaGamO 題組下載器 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <aside class="notes">【15:35–15:37】時間不夠時，這段只講這頁的四步驟，然後給連結和兩支影片（40 秒短片、3 分鐘完整教學）。技能教學頁標示「適用：學校 Google 帳號（教育版 Gemini）」；請老師先確認自己的帳號在 Gemini 看得到「技能」。</aside>
+</section>
+
+<!-- 25 安裝技能 -->
+<section>
+  <div class="s">
+    <span class="kicker">Setup once · Skill</span>
+    <h2>安裝技能：只要做一次</h2>
+    <div class="g2 grow" style="grid-template-columns:1fr 1.05fr;align-items:start">
+      <div class="stg" style="display:flex;flex-direction:column;gap:9px;font-size:22px">
+        <div class="card" style="font-size:21px"><span class="num">1</span>技能教學頁按「<b>⬇ 下載技能檔 SKILL.md</b>」（不用解壓縮）</div>
+        <div class="card" style="font-size:21px"><span class="num">2</span>打開 Gemini「技能」頁，按右上角「<b>建立 ▾</b>」→「上傳」</div>
+        <div class="card" style="font-size:21px"><span class="num">3</span>按「<b>檔案</b>」選 SKILL.md（不要選資料夾）</div>
+        <div class="card" style="font-size:21px"><span class="num">4</span>出現「上傳其他檔案（選用）」時什麼都不加，按「上傳」</div>
+        <div class="card lime" style="font-size:21px"><span class="num">5</span>「<b>已安裝</b>」出現 pagamo-reading-set 就完成</div>
+      </div>
+      <div class="shot stack" data-label="GEMINI" data-a="right">
+        <img src="images/shots/1-create-menu.png" alt="Gemini 技能頁：建立選單有運用 Gemini 建立、手動建立、上傳" />
+        <img src="images/shots/4-installed.png" alt="Gemini 技能頁已安裝 pagamo-reading-set" />
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:37–15:41】下載 SKILL.md 時，教學頁會自動開新分頁到 Gemini 技能頁。右上角頭像要是學校帳號。已經裝過舊版的老師：技能右邊「⋯」→「取代技能」，取代後要再按「⋯」→「安裝」，重新整理確認回到「已安裝」。</aside>
+</section>
+
+<!-- 26 用技能出題 -->
+<section>
+  <div class="s">
+    <span class="kicker">Generate · @pag</span>
+    <h2>在 Gemini 出題：第一則就寫好題數</h2>
+    <div class="g2 grow" style="grid-template-columns:1.05fr 1fr;align-items:start">
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card" style="font-size:22px"><span class="num">1</span>開新對話，輸入框打 <b class="mono">@pag</b>，點 pagamo-reading-set</div>
+        <div class="card lime" style="font-size:22px"><span class="num">2</span>寫上題數再貼文章（或上傳課文照片、PDF），例如：<br><span class="mono" style="color:var(--lime)">@pagamo-reading-set 8 題</span></div>
+        <div class="card" style="font-size:22px"><span class="num">3</span>看預覽：核對題目、正確答案、解說提到的段落</div>
+        <div class="card coral" style="font-size:21px"><b style="color:var(--coral)">先不要打開 Canvas</b>：Canvas 開著時，Gemini 不能使用技能。</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="shot" data-label="GEMINI" data-a="right"><img src="images/shots/5-use-at.png" alt="Gemini 輸入框打 @pag 出現 pagamo-reading-set 技能" /></div>
+        <div class="card small" data-a>沒寫題數時，Gemini 會先問要 5、8 還是 10 題；只給主題時，會自己寫一篇原創短文並標註「本文由 AI 撰寫」。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:41–15:45】為什麼要「第一則就寫題數」：實測技能只對有 @ 它的那一則訊息穩定有效，一次講清楚最保險。預設是四年級、難度中、選項打亂；要別的年級就一起寫在第一則，例如「@pagamo-reading-set 五年級 10 題」。技能偶爾會卡在「Skills: pagamo-reading-set」一直轉圈：按停止，開新對話重新 @ 一次。</aside>
+</section>
+
+<!-- 27 題組下載器 -->
+<section>
+  <div class="s">
+    <span class="kicker">Convert · Downloader</span>
+    <h2>題組下載器：貼上 → 下載 Excel</h2>
+    <div class="g2 grow" style="grid-template-columns:1.35fr 1fr;align-items:start">
+      <div class="shot" data-label="DOWNLOADER" data-a="left"><img src="images/shots/dl_done.png" alt="PaGamO 題組下載器：左邊貼上題組資料，右邊列出每題答案與下載按鈕" /></div>
+      <div class="stg" style="display:flex;flex-direction:column;gap:10px">
+        <div class="card" style="font-size:21px"><span class="num">1</span>Gemini 回覆裡「題組資料」右上角按「<b>複製</b>」</div>
+        <div class="card" style="font-size:21px"><span class="num">2</span>下載器按「<b>📋 從剪貼簿貼上</b>」，右邊逐題核對答案</div>
+        <div class="card lime" style="font-size:21px"><span class="num">3</span>按「<b>⬇ 下載 PaGamO 題組 Excel</b>」，自動打開批量上傳頁</div>
+        <div class="card" style="font-size:21px"><span class="num">4</span>題型選「題組」→ 選檔案 → 上傳</div>
+        <div class="small muted">題目只在你的瀏覽器裡轉成 Excel，不會送到伺服器（需要連網下載官方範本）。</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:45–15:48】下載器網址第一次打開就按 Ctrl＋D 加入書籤：Gemini 會把 Google 還沒收錄的網址改成搜尋連結，從書籤開最穩。貼上後資料有錯，下載器會用紅字列出問題，把紅字複製給 Gemini 請它修正就好。</aside>
+</section>
+
+<!-- 28 兩條路怎麼選 -->
+<section>
+  <div class="s">
+    <span class="kicker">Compare</span>
+    <h2>兩條路怎麼選？</h2>
+    <table class="t stg" style="font-size:20px">
+      <tr><th style="width:200px"></th><th style="color:var(--lime)">A 擴充套件</th><th style="color:var(--cyan)">B Gemini 技能＋下載器</th></tr>
+      <tr><td>要準備什麼</td><td>Chrome＋<b>個人 Gmail</b> 申請的免費金鑰</td><td>Gemini 帳號看得到「技能」（教學頁標示適用學校帳號）</td></tr>
+      <tr><td>素材</td><td>網頁截圖、全文、反白、YouTube、雲端 PDF</td><td>貼文字、課文照片、PDF，或只給主題</td></tr>
+      <tr><td>題數</td><td>5／8／10 題（8 題＝每層 2 題）</td><td>5／8／10 題（8 題＝3／2／2／1）</td></tr>
+      <tr><td>四層次名稱</td><td>訊息提取・直接推論・詮釋整合・評估批判</td><td>直接提取・直接推論・詮釋整合・比較評估</td></tr>
+      <tr><td>改寫年級</td><td>原文或一～六年級改寫</td><td>寫在訊息裡（預設四年級）</td></tr>
+      <tr><td>到 PaGamO</td><td><b>自動放檔、倒數 5 秒上傳</b></td><td>下載 Excel，手動選「題組」上傳</td></tr>
+      <tr><td>另外可匯出</td><td>LoiLoNote 測驗卡</td><td>—</td></tr>
+    </table>
+  </div>
+  <aside class="notes">【15:48–15:50】一句話：能裝擴充套件就用 A，最省事；不能裝或習慣在 Gemini 裡工作就用 B。兩個工具的四層次名稱和 8 題配比不一樣，是兩個工具各自的設定，不影響上傳。</aside>
+</section>
+
+<!-- 29 Q&A -->
+<section data-seg="M07|Q&amp;A 與回饋|15:50|16:00">
+  <div class="s chapter">
+    <span class="kicker">Q&amp;A</span>
+    <h2>謝謝大家，歡迎提問</h2>
+    <div class="qr-set" data-a style="margin-top:8px">
+      <div><div class="qr-static sm" id="qr-store"></div><a class="qr-cap primary" href="https://chromewebstore.google.com/detail/cfbehdinangicblpbnockoofeccmoidp" target="_blank" rel="noopener">加到 Chrome <span aria-hidden="true">↗</span></a></div>
+      <div><div class="qr-static sm" id="qr-guide"></div><a class="qr-cap" href="https://cagoooo.github.io/pirls-questioncraft/extension/" target="_blank" rel="noopener">擴充套件說明 <span aria-hidden="true">↗</span></a></div>
+      <div><div class="qr-static sm" id="qr-skill"></div><a class="qr-cap" href="https://cagoooo.github.io/pagamo-gemini/skill.html" target="_blank" rel="noopener">Gemini 技能 <span aria-hidden="true">↗</span></a></div>
+      <div><div class="qr-static sm" id="qr-dl"></div><a class="qr-cap" href="https://cagoooo.github.io/pagamo-gemini/" target="_blank" rel="noopener">題組下載器 <span aria-hidden="true">↗</span></a></div>
+      <div><div class="qr-static sm" id="qr-join"></div><a class="qr-cap" id="cap-join" href="join.html" target="_blank" rel="noopener">互動與回饋 <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <p class="qr-hint" data-a><button class="chat-copy" type="button">📋 一鍵複製全部連結</button> 再貼一次到 Meet 聊天室；QR Code 也可以直接點</p>
+  </div>
+  <aside class="notes">【15:50–15:57】開放提問。互動頁的「安裝連結」分頁有全部連結和三支教學影片，會後可以慢慢看。</aside>
+</section>
+
+<!-- 30 會後回饋 -->
+<section id="slide-feedback">
+  <div class="s">
+    <span class="kicker">Feedback <span class="live">LIVE</span></span>
+    <h2>花一分鐘，給我一點回饋</h2>
+    <div class="fb grow">
+      <div class="poll mini-poll" data-key="rate">
+        <h3 class="poll-q"></h3>
+        <div class="poll-opts"></div>
+        <div class="small">已填 <b class="poll-total">0</b> 人</div>
+      </div>
+      <div class="poll mini-poll" data-key="use">
+        <h3 class="poll-q"></h3>
+        <div class="poll-opts"></div>
+        <div class="small">已填 <b class="poll-total">0</b> 人</div>
+      </div>
+      <div class="join fb-join">
+        <div class="qr" data-key="feedback"></div><a class="qr-url" target="_blank" rel="noopener"></a>
+        <div class="small">還有一題：<br>今天最有收穫的一個詞</div>
+        <span class="offline-note">本機預覽：互動功能部署後才會連線</span>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">【15:57–16:00】把 join.html#feedback 貼到聊天室。回饋結果會留在資料庫，會後打開 report.html 可以列印成一頁成果紀錄。</aside>
+</section>
+
+</div>
+</div>
+
+<!-- 阿凱老師署名（不可省） -->
+<footer class="akai-footer">
+  Made with ❤️ by
+  <a href="https://cagoooo.github.io/Akai/" target="_blank" rel="noopener noreferrer">阿凱老師</a>
+  · 桃園市龍潭區石門國民小學
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/wordcloud@1.2.2/src/wordcloud2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="js/hud.js?v=__BUILD_VERSION__"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    width: 1280,
+    height: 720,
+    margin: 0.03,
+    center: false,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    backgroundTransition: 'fade',
+    progress: true,
+    controls: true,
+    slideNumber: 'c/t',
+    plugins: [RevealNotes],
+  });
+  // 固定網址的 QR Code（本身也是連結：線上研習的老師用滑鼠點就能開新分頁）
+  var STORE = 'https://chromewebstore.google.com/detail/cfbehdinangicblpbnockoofeccmoidp';
+  var GUIDE = 'https://cagoooo.github.io/pirls-questioncraft/extension/';
+  var SKILL = 'https://cagoooo.github.io/pagamo-gemini/skill.html';
+  var DL = 'https://cagoooo.github.io/pagamo-gemini/';
+  var TEST_Q = /[?&]test=1\b/.test(location.search) ? '?test=1' : '';
+  var JOIN = new URL('join.html' + TEST_Q, location.href).href;
+  var PRACTICE = new URL('practice.html', location.href).href;
+  [['qr-akai', 'https://cagoooo.github.io/Akai/'], ['qr-store', STORE], ['qr-guide', GUIDE], ['qr-skill', SKILL], ['qr-dl', DL], ['qr-join', JOIN]].forEach(function (pair) {
+    var el = document.getElementById(pair[0]);
+    if (!el) return;
+    var qr = qrcode(0, 'M');
+    qr.addData(pair[1]);
+    qr.make();
+    var a = document.createElement('a');
+    a.href = pair[1]; a.target = '_blank'; a.rel = 'noopener'; a.className = 'qr-link'; a.title = '點一下開新分頁';
+    a.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 2, scalable: true });
+    el.replaceChildren(a);
+  });
+  var capJoin = document.getElementById('cap-join');
+  if (capJoin) capJoin.href = JOIN;
+  // 一鍵複製全部連結：貼到 Google Meet 聊天室（純文字、一行一個連結）
+  var CHAT_TEXT = [
+    '📌 12/2 研習「教學效率升級：PaGamO 實用攻略」連結',
+    '🧩 PIRLS 閱讀題組小幫手（Chrome 擴充套件）安裝：' + STORE,
+    '📘 擴充套件圖文說明（含手動安裝）：' + GUIDE,
+    '🔑 申請 Gemini 金鑰（請用個人 Gmail，不要用學校信箱）：https://aistudio.google.com/apikey',
+    '📝 實作練習短文〈雨水撲滿〉：' + PRACTICE,
+    '🎬 擴充套件教學影片（約 5 分鐘）：https://youtu.be/Pn3XxfHRySw',
+    '🔐 新北老師登入 PaGamO：新北市親師生平台 https://pts.ntpc.edu.tw/',
+    '🤖 Gemini 技能下載＋安裝教學：' + SKILL,
+    '📥 PaGamO 題組下載器：' + DL,
+    '🎬 題組下載器教學：40 秒短片 https://youtube.com/shorts/gf_jWJgjn2w ／3 分鐘完整版 https://youtu.be/VPUuUjXlqLw',
+    '💬 互動與回饋：' + JOIN,
+    '🖥️ 今天的簡報：' + location.origin + location.pathname.replace(/index\.html$/, ''),
+  ].join('\n');
+  document.querySelectorAll('.chat-copy').forEach(function (btn) {
+    var label = btn.textContent;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var done = function (ok) {
+        btn.textContent = ok ? '✓ 已複製，貼到聊天室' : '複製失敗，請到互動頁「安裝連結」';
+        btn.classList.toggle('done', ok);
+        setTimeout(function () { btn.textContent = label; btn.classList.remove('done'); }, 2500);
+      };
+      var fallback = function () {
+        var ta = document.createElement('textarea');
+        ta.value = CHAT_TEXT; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        var ok = false; try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+        ta.remove(); done(ok);
+      };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(CHAT_TEXT).then(function () { done(true); }, fallback);
+      else fallback();
+    });
+  });
+  window.__chatText = CHAT_TEXT;
+</script>
+<script src="js/motion.js?v=__BUILD_VERSION__"></script>
+<script type="module" src="js/deck.js?v=__BUILD_VERSION__"></script>
+<script src="js/sw-register.js?v=__BUILD_VERSION__"></script>
+</body>
+</html>
