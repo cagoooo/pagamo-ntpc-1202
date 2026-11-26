@@ -11,54 +11,87 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet" />
   <style>
-    :root { --bg: #f4f6f2; --ink: #1b2128; --muted: #5d6874; --line: #d9dfd6; --lime: #5d7c00; }
+    :root { --bg: #f4f6f2; --ink: #1b2128; --muted: #55606b; --line: #d9dfd6; --lime: #5d7c00; --dark: #0c1014; --neon: #c6f432;
+      --maxw: min(1360px, 94vw); --fs-sm: .95rem; --fs-md: 1.1rem; --fs-lg: 1.35rem; }
+    html { font-size: 16px; }
+    @media (min-width: 768px) { html { font-size: 17px; } }
+    @media (min-width: 1200px) { html { font-size: 19px; } }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; }
-    .bar { background: #0c1014; color: #eef2f5; padding: 12px 20px; font-size: 15px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
-    .bar b { color: #c6f432; font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; }
-    .bar button { font: inherit; font-weight: 700; border: none; border-radius: 6px; padding: 7px 14px; background: #c6f432; color: #11151b; cursor: pointer; }
-    .grades { max-width: 760px; margin: 22px auto 0; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .grades a { display: block; text-decoration: none; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font-weight: 700; }
-    .grades a small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; margin-top: 2px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; font-size: 1rem; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(14px, 2.5vw, 32px); }
+    .bar { background: var(--dark); color: #eef2f5; }
+    .bar .wrap { padding-top: 12px; padding-bottom: 12px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; font-size: var(--fs-sm); }
+    .bar b { color: var(--neon); font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; }
+    .bar button { font: inherit; font-weight: 700; border: none; border-radius: 8px; padding: 9px 16px; background: var(--neon); color: #11151b; cursor: pointer; }
+
+    /* 手機：年級 → 文章 → 步驟；電腦：左欄年級＋步驟、右欄文章 */
+    .layout { display: grid; gap: 16px; padding-top: 18px; padding-bottom: 28px; grid-template-areas: "grades" "art" "steps"; }
+    .grades { grid-area: grades; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .grades a { display: block; text-decoration: none; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 9px 12px; font-weight: 700; font-size: var(--fs-sm); line-height: 1.4; }
+    .grades a i { font-style: normal; }
+    .grades a small { display: block; font-weight: 400; color: var(--muted); font-size: .875rem; margin-top: 2px; }
+    @media (max-width: 999px) { .grades a { text-align: center; } .grades a .t, .grades a .g { display: none; } .grades a i { margin-right: 4px; } }
     .grades a:hover { border-color: var(--lime); }
-    .grades a.on { background: #0c1014; border-color: #0c1014; color: #c6f432; }
+    .grades a.on { background: var(--dark); border-color: var(--dark); color: var(--neon); }
     .grades a.on small { color: #c9d3db; }
-    main { max-width: 760px; margin: 0 auto; padding: 18px 20px 24px; }
-    article { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 32px 36px; }
-    h1 { font-size: 34px; margin: 0 0 6px; }
-    .by { color: var(--muted); font-size: 15px; margin: 0 0 22px; }
-    article p { font-size: 20px; line-height: 2; margin: 0 0 16px; text-indent: 2em; }
-    .tips { margin-top: 22px; font-size: 15px; color: var(--muted); line-height: 1.8; }
-    footer { text-align: center; font-size: 14px; color: var(--muted); padding: 8px 16px 28px; }
+    main { grid-area: art; min-width: 0; }
+    article { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: clamp(22px, 3.2vw, 52px) clamp(18px, 3.6vw, 60px); }
+    h1 { font-size: clamp(1.75rem, 3vw, 2.6rem); margin: 0 0 6px; line-height: 1.3; }
+    article p.by { color: var(--muted); font-size: var(--fs-sm); margin: 0 0 clamp(16px, 2vw, 28px); text-indent: 0; line-height: 1.6; }
+    article p { font-size: 1.25rem; line-height: 2; margin: 0 0 1em; text-indent: 2em; }
+    .steps { grid-area: steps; background: #fff; border: 1px solid var(--line); border-left: 6px solid var(--lime); border-radius: 12px; padding: 16px 18px; font-size: var(--fs-sm); color: var(--muted); line-height: 1.8; }
+    .steps h2 { font-size: var(--fs-md); color: var(--ink); margin: 0 0 6px; }
+    .steps ol { margin: 0 0 8px; padding-left: 1.4em; color: var(--ink); }
+    .steps li { margin: 4px 0; }
+    .steps b { color: var(--lime); }
+    .steps a { color: var(--lime); font-weight: 700; }
+    footer { text-align: center; font-size: var(--fs-sm); color: var(--muted); padding: 4px 16px 28px; }
     footer a { color: var(--lime); }
-    @media (max-width: 600px) { article { padding: 22px 18px; } article p { font-size: 18px; } h1 { font-size: 28px; } .grades { gap: 6px; } .grades a { padding: 8px 10px; font-size: 15px; } }
+
+    @media (min-width: 1000px) {
+      .layout { grid-template-columns: minmax(300px, 360px) minmax(0, 1fr); grid-template-rows: auto 1fr; grid-template-areas: "grades art" "steps art"; column-gap: clamp(20px, 2.5vw, 40px); row-gap: 16px; align-items: start; padding-top: 26px; }
+      .grades { grid-template-columns: 1fr; gap: 10px; }
+      .grades a { padding: 16px 18px; font-size: var(--fs-md); border-radius: 12px; display: grid; grid-template-columns: 2em 1fr; column-gap: 8px; align-items: center; }
+      .grades a i { grid-row: span 2; font-size: 1.5em; text-align: center; }
+      .grades a small { font-size: var(--fs-sm); }
+      .steps { padding: 18px 20px; }
+    }
+    @media (max-width: 600px) { article p { font-size: 1.15rem; } }
   </style>
 </head>
 <body>
-  <div class="bar">
+  <div class="bar"><div class="wrap">
     <span><b>PRACTICE</b>　研習實作用短文：按擴充套件的「📖 讀取這頁全文」出題</span>
     <button type="button" id="copy">📋 複製全文（改用「📝 文字」分頁貼上）</button>
+  </div></div>
+  <div class="wrap layout">
+    <nav class="grades" aria-label="選擇年級">
+      <a href="practice-low.html"><i>🌱</i><span>低年級<span class="t">〈小番茄長大了〉</span></span><small>約 300 字<span class="g">・適合一、二年級</span></small></a>
+      <a href="practice.html" class="on" aria-current="page"><i>💧</i><span>中年級<span class="t">〈雨水撲滿〉</span></span><small>約 450 字<span class="g">・適合三、四年級</span></small></a>
+      <a href="practice-high.html"><i>🐝</i><span>高年級<span class="t">〈城市裡的蜜蜂旅館〉</span></span><small>約 750 字<span class="g">・適合五、六年級</span></small></a>
+    </nav>
+    <main>
+      <article id="story">
+        <h1>雨水撲滿</h1>
+        <p class="by">自編短文・約 450 字・適合三、四年級</p>
+        <p>星期一早上，四年三班的教室外多了一個藍色的大桶子。桶子上貼著一張紙，寫著「雨水撲滿，歡迎存水」。同學們圍在旁邊你一言我一語，猜不出這個桶子要做什麼。</p>
+        <p>原來，這是自然老師和同學一起做的「雨水撲滿」。他們在屋簷下接了一條水管，下雨的時候，從屋頂流下來的雨水，會順著水管流進桶子裡。桶子上方蓋著細細的網子，可以擋住樹葉和小蟲；桶子下方裝了一個水龍頭，方便把水接出來。</p>
+        <p>第一個星期連下了三天雨，桶子很快就裝了半桶水。值日生小安每天放學前，都會用尺量一量水有多高，再把數字寫在記錄表上。小安發現，雨下得越大，水位升得越快；可是連續好幾天出太陽，水位也會慢慢變低。</p>
+        <p>這些雨水不能喝，但是用處很多。同學們用它來澆花、洗拖把，還用來沖洗走廊邊的洗手台。過了一個月，總務處的阿姨告訴大家，四年三班這個月用的自來水，比上個月少了一些。</p>
+        <p>學期末，全班一起討論雨水撲滿還能怎麼改進。有人建議再多放一個桶子，有人想在桶子上畫圖，提醒大家節約用水。小安在記錄表的最後一行寫下：「每一滴雨水，都值得好好收藏。」</p>
+      </article>
+    </main>
+    <aside class="steps">
+      <h2>實作步驟</h2>
+      <ol>
+        <li>按工具列的 PIRLS 小幫手圖示 →「<b>📖 讀取這頁全文</b>」</li>
+        <li>題數選「<b>5 題</b>」，適讀年級可試試「<b>四年級</b>」</li>
+        <li>按「✨ 開始出題」，看完題目再決定要不要送到 PaGamO</li>
+      </ol>
+      做完了？到<a href="join.html#setup" target="_blank" rel="noopener">互動頁回報進度 ↗</a><br>
+      這是講師自己寫的示範短文，可以自由用來練習出題。
+    </aside>
   </div>
-  <nav class="grades" aria-label="選擇年級">
-    <a href="practice-low.html">低年級〈小番茄長大了〉<small>約 300 字・適合一、二年級</small></a>
-    <a href="practice.html" class="on" aria-current="page">中年級〈雨水撲滿〉<small>約 450 字・適合三、四年級</small></a>
-    <a href="practice-high.html">高年級〈城市裡的蜜蜂旅館〉<small>約 750 字・適合五、六年級</small></a>
-  </nav>
-  <main>
-    <article id="story">
-      <h1>雨水撲滿</h1>
-      <p class="by">自編短文・約 450 字・適合三、四年級</p>
-      <p>星期一早上，四年三班的教室外多了一個藍色的大桶子。桶子上貼著一張紙，寫著「雨水撲滿，歡迎存水」。同學們圍在旁邊你一言我一語，猜不出這個桶子要做什麼。</p>
-      <p>原來，這是自然老師和同學一起做的「雨水撲滿」。他們在屋簷下接了一條水管，下雨的時候，從屋頂流下來的雨水，會順著水管流進桶子裡。桶子上方蓋著細細的網子，可以擋住樹葉和小蟲；桶子下方裝了一個水龍頭，方便把水接出來。</p>
-      <p>第一個星期連下了三天雨，桶子很快就裝了半桶水。值日生小安每天放學前，都會用尺量一量水有多高，再把數字寫在記錄表上。小安發現，雨下得越大，水位升得越快；可是連續好幾天出太陽，水位也會慢慢變低。</p>
-      <p>這些雨水不能喝，但是用處很多。同學們用它來澆花、洗拖把，還用來沖洗走廊邊的洗手台。過了一個月，總務處的阿姨告訴大家，四年三班這個月用的自來水，比上個月少了一些。</p>
-      <p>學期末，全班一起討論雨水撲滿還能怎麼改進。有人建議再多放一個桶子，有人想在桶子上畫圖，提醒大家節約用水。小安在記錄表的最後一行寫下：「每一滴雨水，都值得好好收藏。」</p>
-    </article>
-    <p class="tips">
-      實作步驟：① 按工具列的 PIRLS 小幫手圖示 →「📖 讀取這頁全文」　② 題數選「5 題」、適讀年級可試試「四年級」　③ 按「✨ 開始出題」，看完題目再決定要不要送到 PaGamO。<br>
-      這是講師自己寫的示範短文，可以自由用來練習出題。上方可以切換低、中、高年級的範本文章。
-    </p>
-  </main>
   <footer>
     Made with ❤️ by
     <a href="https://cagoooo.github.io/Akai/" target="_blank" rel="noopener noreferrer">阿凱老師</a>
