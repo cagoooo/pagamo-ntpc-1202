@@ -357,3 +357,34 @@ html.offline .offline-note { display: block; }
 .big-ic p { font-size: 27px; }
 .icard .tag, .card .tag { align-self: flex-start; }
 .t th { white-space: nowrap; }
+
+/* ---------- SKILL.md 解剖：結構圖與放大程式碼 ---------- */
+.md-map { display: flex; flex-direction: column; gap: 8px; }
+.md-blk { position: relative; display: grid; grid-template-columns: 44px 1fr; grid-template-rows: auto auto; column-gap: 12px; align-items: center;
+  background: #080b0e; border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 19px; }
+.md-blk .md-no { grid-row: span 2; font: 800 28px var(--mono); color: var(--lime); text-align: center; }
+.md-blk .mono { color: var(--ink); line-height: 1.45; }
+.md-blk em { font-style: normal; font-size: 17px; color: var(--muted); }
+.md-blk.fm { border-color: var(--lime); }
+.md-blk.fm .mono { color: var(--lime); font-size: 17px; }
+.code-view { background: #080b0e; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.cv-bar { display: flex; justify-content: space-between; padding: 6px 14px; background: var(--surface2); font: 700 15px var(--mono); color: var(--muted); }
+.reveal pre.cv { margin: 0; padding: 14px 18px; width: auto; box-shadow: none; background: transparent; font: 500 21px/1.6 var(--mono); color: var(--ink); white-space: pre-wrap; word-break: break-all; }
+.reveal pre.cv.sm { font-size: 19px; line-height: 1.55; }
+.cv .ln { display: inline-block; width: 1.6em; color: #4a5563; user-select: none; }
+.cv .dim { color: #6b7684; }
+.cv .k { color: var(--cyan); font-weight: 700; }
+.cv .hl-a { background: rgba(198, 244, 50, .18); color: var(--lime); padding: 0 4px; border-radius: 3px; font-weight: 700; }
+.cv .hl-b { background: rgba(90, 209, 255, .14); color: var(--cyan); padding: 0 4px; border-radius: 3px; }
+
+/* ---------- 倒數計時：改開班級小管家（可配 YouTube BGM） ---------- */
+.reveal a.timer-launch { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
+  background: #080b0e; border: 1px solid var(--lime); border-radius: 10px; padding: 18px 16px; color: var(--ink); transition: transform .15s, box-shadow .15s; }
+.reveal a.timer-launch:hover { transform: translateY(-3px); box-shadow: 0 0 0 4px rgba(198, 244, 50, .35); }
+.timer-launch .tl-lbl { font: 700 17px var(--mono); letter-spacing: .1em; color: var(--muted); }
+.timer-launch .tl-num { font: 800 84px/1 var(--mono); color: var(--ink); }
+.timer-launch .tl-go { background: var(--lime); color: var(--lime-ink); font-weight: 900; font-size: 21px; padding: 8px 16px; border-radius: 6px; }
+.timer-launch .tl-how { font-size: 16px; color: var(--muted); text-align: center; }
+.reveal a.timer-launch.compact { flex-direction: row; flex-wrap: wrap; gap: 6px 16px; padding: 12px 16px; }
+.timer-launch.compact .tl-num { font-size: 48px; }
+.timer-launch.compact .tl-how { flex-basis: 100%; }
