@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>雨水撲滿｜研習實作用自編短文</title>
-  <meta name="description" content="12/2 新北市教師研習實作用的自編短文〈雨水撲滿〉，約 500 字、四年級程度，用來練習 PIRLS 閱讀題組小幫手出題。" />
+  <title>雨水撲滿｜研習實作用自編短文（中年級）</title>
+  <meta name="description" content="12/2 新北市教師研習實作用的自編短文〈雨水撲滿〉，約 450 字、適合三、四年級，用來練習 PIRLS 閱讀題組小幫手出題。" />
   <meta name="theme-color" content="#0c1014" />
   <link rel="icon" href="favicon.svg?v=__BUILD_VERSION__" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,10 +14,16 @@
     :root { --bg: #f4f6f2; --ink: #1b2128; --muted: #5d6874; --line: #d9dfd6; --lime: #5d7c00; }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; }
-    .bar { background: #0c1014; color: #eef2f5; padding: 12px 20px; font-size: 15px; display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; }
+    .bar { background: #0c1014; color: #eef2f5; padding: 12px 20px; font-size: 15px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
     .bar b { color: #c6f432; font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; }
     .bar button { font: inherit; font-weight: 700; border: none; border-radius: 6px; padding: 7px 14px; background: #c6f432; color: #11151b; cursor: pointer; }
-    main { max-width: 760px; margin: 0 auto; padding: 32px 20px 24px; }
+    .grades { max-width: 760px; margin: 22px auto 0; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .grades a { display: block; text-decoration: none; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font-weight: 700; }
+    .grades a small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .grades a:hover { border-color: var(--lime); }
+    .grades a.on { background: #0c1014; border-color: #0c1014; color: #c6f432; }
+    .grades a.on small { color: #c9d3db; }
+    main { max-width: 760px; margin: 0 auto; padding: 18px 20px 24px; }
     article { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 32px 36px; }
     h1 { font-size: 34px; margin: 0 0 6px; }
     .by { color: var(--muted); font-size: 15px; margin: 0 0 22px; }
@@ -25,18 +31,23 @@
     .tips { margin-top: 22px; font-size: 15px; color: var(--muted); line-height: 1.8; }
     footer { text-align: center; font-size: 14px; color: var(--muted); padding: 8px 16px 28px; }
     footer a { color: var(--lime); }
-    @media (max-width: 600px) { article { padding: 22px 18px; } article p { font-size: 18px; } h1 { font-size: 28px; } }
+    @media (max-width: 600px) { article { padding: 22px 18px; } article p { font-size: 18px; } h1 { font-size: 28px; } .grades { gap: 6px; } .grades a { padding: 8px 10px; font-size: 15px; } }
   </style>
 </head>
 <body>
   <div class="bar">
-    <span><b>PRACTICE</b>　研習實作用短文：按擴充套件的「📖 讀取這頁全文」出 5 題</span>
+    <span><b>PRACTICE</b>　研習實作用短文：按擴充套件的「📖 讀取這頁全文」出題</span>
     <button type="button" id="copy">📋 複製全文（改用「📝 文字」分頁貼上）</button>
   </div>
+  <nav class="grades" aria-label="選擇年級">
+    <a href="practice-low.html">低年級〈小番茄長大了〉<small>約 300 字・適合一、二年級</small></a>
+    <a href="practice.html" class="on" aria-current="page">中年級〈雨水撲滿〉<small>約 450 字・適合三、四年級</small></a>
+    <a href="practice-high.html">高年級〈城市裡的蜜蜂旅館〉<small>約 750 字・適合五、六年級</small></a>
+  </nav>
   <main>
     <article id="story">
       <h1>雨水撲滿</h1>
-      <p class="by">自編短文・約 500 字・適合四年級</p>
+      <p class="by">自編短文・約 450 字・適合三、四年級</p>
       <p>星期一早上，四年三班的教室外多了一個藍色的大桶子。桶子上貼著一張紙，寫著「雨水撲滿，歡迎存水」。同學們圍在旁邊你一言我一語，猜不出這個桶子要做什麼。</p>
       <p>原來，這是自然老師和同學一起做的「雨水撲滿」。他們在屋簷下接了一條水管，下雨的時候，從屋頂流下來的雨水，會順著水管流進桶子裡。桶子上方蓋著細細的網子，可以擋住樹葉和小蟲；桶子下方裝了一個水龍頭，方便把水接出來。</p>
       <p>第一個星期連下了三天雨，桶子很快就裝了半桶水。值日生小安每天放學前，都會用尺量一量水有多高，再把數字寫在記錄表上。小安發現，雨下得越大，水位升得越快；可是連續好幾天出太陽，水位也會慢慢變低。</p>
@@ -45,7 +56,7 @@
     </article>
     <p class="tips">
       實作步驟：① 按工具列的 PIRLS 小幫手圖示 →「📖 讀取這頁全文」　② 題數選「5 題」、適讀年級可試試「四年級」　③ 按「✨ 開始出題」，看完題目再決定要不要送到 PaGamO。<br>
-      這是講師自己寫的示範短文，可以自由用來練習出題。
+      這是講師自己寫的示範短文，可以自由用來練習出題。上方可以切換低、中、高年級的範本文章。
     </p>
   </main>
   <footer>

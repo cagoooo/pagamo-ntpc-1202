@@ -4,7 +4,7 @@
 
 - 簡報：<https://cagoooo.github.io/pagamo-ntpc-1202/>（按 `S` 開講者備註，每頁有時間區間；每頁上方的時程列會顯示這段預定時間與現在時間）
 - 互動參與頁：`join.html`（破冰文字雲、實作進度回報、會後回饋、全部連結）
-- 實作用自編短文：`practice.html`（〈雨水撲滿〉，約 500 字）
+- 實作用自編短文（低／中／高年級各一篇，`python scripts/make_practice.py` 產生）：`practice-low.html`〈小番茄長大了〉約 300 字、`practice.html`〈雨水撲滿〉約 450 字、`practice-high.html`〈城市裡的蜜蜂旅館〉約 750 字
 - 成果紀錄頁：`report.html`（會後讀取所有互動結果，可列印成 PDF）
 - 彩排模式：網址加 `?test=1`，互動資料存到 `ntpc1202test_` 集合，不會混進正式紀錄
 - 議程草稿：`議程草稿.md`

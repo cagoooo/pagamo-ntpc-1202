@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小番茄長大了｜研習實作用自編短文（低年級）</title>
+  <meta name="description" content="12/2 新北市教師研習實作用的自編短文〈小番茄長大了〉，約 300 字、適合一、二年級，用來練習 PIRLS 閱讀題組小幫手出題。" />
+  <meta name="theme-color" content="#0c1014" />
+  <link rel="icon" href="favicon.svg?v=__BUILD_VERSION__" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg: #f4f6f2; --ink: #1b2128; --muted: #5d6874; --line: #d9dfd6; --lime: #5d7c00; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; }
+    .bar { background: #0c1014; color: #eef2f5; padding: 12px 20px; font-size: 15px; display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
+    .bar b { color: #c6f432; font-family: 'JetBrains Mono', monospace; letter-spacing: .06em; }
+    .bar button { font: inherit; font-weight: 700; border: none; border-radius: 6px; padding: 7px 14px; background: #c6f432; color: #11151b; cursor: pointer; }
+    .grades { max-width: 760px; margin: 22px auto 0; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .grades a { display: block; text-decoration: none; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; font-weight: 700; }
+    .grades a small { display: block; font-weight: 400; color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .grades a:hover { border-color: var(--lime); }
+    .grades a.on { background: #0c1014; border-color: #0c1014; color: #c6f432; }
+    .grades a.on small { color: #c9d3db; }
+    main { max-width: 760px; margin: 0 auto; padding: 18px 20px 24px; }
+    article { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 32px 36px; }
+    h1 { font-size: 34px; margin: 0 0 6px; }
+    .by { color: var(--muted); font-size: 15px; margin: 0 0 22px; }
+    article p { font-size: 22px; line-height: 2; margin: 0 0 16px; text-indent: 2em; }
+    .tips { margin-top: 22px; font-size: 15px; color: var(--muted); line-height: 1.8; }
+    footer { text-align: center; font-size: 14px; color: var(--muted); padding: 8px 16px 28px; }
+    footer a { color: var(--lime); }
+    @media (max-width: 600px) { article { padding: 22px 18px; } article p { font-size: 18px; } h1 { font-size: 28px; } .grades { gap: 6px; } .grades a { padding: 8px 10px; font-size: 15px; } }
+  </style>
+</head>
+<body>
+  <div class="bar">
+    <span><b>PRACTICE</b>　研習實作用短文：按擴充套件的「📖 讀取這頁全文」出題</span>
+    <button type="button" id="copy">📋 複製全文（改用「📝 文字」分頁貼上）</button>
+  </div>
+  <nav class="grades" aria-label="選擇年級">
+    <a href="practice-low.html" class="on" aria-current="page">低年級〈小番茄長大了〉<small>約 300 字・適合一、二年級</small></a>
+    <a href="practice.html">中年級〈雨水撲滿〉<small>約 450 字・適合三、四年級</small></a>
+    <a href="practice-high.html">高年級〈城市裡的蜜蜂旅館〉<small>約 750 字・適合五、六年級</small></a>
+  </nav>
+  <main>
+    <article id="story">
+      <h1>小番茄長大了</h1>
+      <p class="by">自編短文・約 300 字・適合一、二年級</p>
+      <p>星期一，老師帶來一包小番茄種子。小葵和同學把種子放進小花盆裡，再輕輕蓋上一層土。</p>
+      <p>老師說：「種子要喝水，也要曬太陽。」所以每天早上，小葵都會拿小水壺，幫花盆澆一點點水。</p>
+      <p>過了五天，土裡冒出兩片小小的綠葉。小葵開心得跳了起來，馬上拉著好朋友小杰一起來看。</p>
+      <p>有一天放學前，小杰把花盆搬到走廊玩，卻忘了搬回窗台。過了兩天，小番茄的葉子變得黃黃的，還垂了下來。小杰難過得說不出話，小葵拍拍他說：「沒關係，我們一起把它搬回有陽光的地方。」</p>
+      <p>又過了幾個星期，小番茄開出黃色的小花，後來結出一顆顆綠色的果實。果實慢慢變紅了，全班一起數一數，一共有十二顆。</p>
+      <p>小葵在畫圖日記上寫：「只要用心照顧，小小的種子也會長大。」</p>
+    </article>
+    <p class="tips">
+      實作步驟：① 按工具列的 PIRLS 小幫手圖示 →「📖 讀取這頁全文」　② 題數選「5 題」、適讀年級可試試「二年級」　③ 按「✨ 開始出題」，看完題目再決定要不要送到 PaGamO。<br>
+      這是講師自己寫的示範短文，可以自由用來練習出題。上方可以切換低、中、高年級的範本文章。
+    </p>
+  </main>
+  <footer>
+    Made with ❤️ by
+    <a href="https://cagoooo.github.io/Akai/" target="_blank" rel="noopener noreferrer">阿凱老師</a>
+    · 桃園市龍潭區石門國民小學
+  </footer>
+  <script>
+    document.getElementById('copy').addEventListener('click', function () {
+      var el = document.getElementById('story');
+      var text = el.querySelector('h1').textContent + '\n\n' +
+        Array.prototype.map.call(el.querySelectorAll('p:not(.by)'), function (p) { return p.textContent; }).join('\n');
+      var btn = this;
+      var done = function (ok) { btn.textContent = ok ? '✓ 已複製，到工作台「📝 文字」貼上' : '複製失敗，請手動選取'; };
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
+      else done(false);
+    });
+  </script>
+</body>
+</html>

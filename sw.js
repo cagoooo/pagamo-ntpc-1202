@@ -3,7 +3,7 @@ const BUILD_VERSION = '__BUILD_VERSION__';
 const PREFIX = 'ntpc1202-';
 const CACHE = PREFIX + BUILD_VERSION;
 const PRECACHE = [
-  './', './index.html', './join.html', './report.html', './practice.html', './manifest.webmanifest',
+  './', './index.html', './join.html', './report.html', './practice.html', './practice-low.html', './practice-high.html', './manifest.webmanifest',
   './favicon.svg', './favicon.ico', './apple-touch-icon.png',
   './css/dash.css', './js/deck.js', './js/interact.js', './js/firebase-config.js',
   './js/motion.js', './js/hud.js', './js/sw-register.js',
