@@ -46,5 +46,8 @@ jobs:
       - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
+      # 打包完立刻部署有時會找不到網站檔（GitHub 端還沒準備好），先等一下
+      - name: Wait for artifact
+        run: sleep 20
       - id: deployment
         uses: actions/deploy-pages@v5
