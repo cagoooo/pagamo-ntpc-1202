@@ -24,88 +24,165 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet" />
   <style>
-    :root { --bg:#0c1014; --surface:#151b22; --surface2:#1c242d; --ink:#eef2f5; --muted:#9aa6b2; --line:#2a3440; --lime:#c6f432; --cyan:#5ad1ff; --amber:#ffb547; color-scheme: dark; }
+    :root {
+      --bg:#0c1014; --surface:#151b22; --surface2:#1c242d; --ink:#eef2f5; --muted:#a3aebb; --line:#2a3440;
+      --lime:#c6f432; --cyan:#5ad1ff; --amber:#ffb547;
+      --maxw: min(1360px, 94vw);
+      --fs-xs: .85rem; --fs-sm: .95rem; --fs-base: 1rem; --fs-md: 1.12rem; --fs-lg: 1.4rem; --fs-xl: 1.8rem;
+      color-scheme: dark;
+    }
+    html { font-size: 16px; }
+    @media (min-width: 768px) { html { font-size: 17px; } }
+    @media (min-width: 1200px) { html { font-size: 19px; } }
     * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; }
-    .wrap { max-width: 760px; margin: 0 auto; }
-    header { padding: 18px 16px 8px; }
-    header small { color: var(--lime); font: 700 13px 'JetBrains Mono', monospace; letter-spacing: .08em; }
-    header h1 { margin: 6px 0 0; font-size: 22px; font-weight: 900; }
-    nav { display: flex; gap: 6px; overflow-x: auto; padding: 8px 16px; position: sticky; top: 0; background: var(--bg); z-index: 2; border-bottom: 1px solid var(--line); }
-    nav a { flex-shrink: 0; text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 7px 13px; font-size: 15px; font-weight: 700; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Noto Sans TC', 'Microsoft JhengHei', sans-serif; font-size: var(--fs-base); line-height: 1.6;
+      background-image: linear-gradient(rgba(198,244,50,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(198,244,50,.03) 1px, transparent 1px); background-size: 40px 40px; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 clamp(14px, 2.5vw, 32px); }
+
+    /* 頁首 */
+    header { padding: clamp(16px, 2.5vw, 30px) 0 clamp(10px, 1.5vw, 18px); display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 10px 24px; }
+    header small { display: block; color: var(--lime); font: 700 var(--fs-sm) 'JetBrains Mono', monospace; letter-spacing: .08em; }
+    header h1 { margin: 6px 0 0; font-size: clamp(1.3rem, 2.4vw, 2.2rem); font-weight: 900; line-height: 1.3; }
+    header h1 span { color: var(--lime); }
+    .deck-btn { display: none; text-decoration: none; color: var(--lime); border: 1px solid var(--lime); border-radius: 8px; padding: 10px 18px; font-weight: 700; font-size: var(--fs-md); white-space: nowrap; }
+    .deck-btn:hover { background: rgba(198,244,50,.1); }
+
+    /* 版面：手機單欄（頂部橫向分頁），電腦左側欄＋右主區 */
+    .layout { display: block; }
+    nav { display: flex; gap: 6px; overflow-x: auto; padding: 8px 0; position: sticky; top: 0; background: var(--bg); z-index: 2; border-bottom: 1px solid var(--line); }
+    nav a { flex-shrink: 0; text-decoration: none; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 14px; font-size: var(--fs-sm); font-weight: 700; }
+    nav a i { font-style: normal; margin-right: 4px; }
+    nav a small { display: none; }
     nav a.on { background: var(--lime); border-color: var(--lime); color: #11151b; }
-    main { padding: 14px 16px 40px; }
-    .panel { display: none; background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--lime); border-radius: 10px; padding: 18px; }
+    .side-info { display: none; }
+    main { padding: 16px 0 40px; min-width: 0; }
+
+    @media (min-width: 1000px) {
+      .deck-btn { display: inline-block; }
+      .layout { display: grid; grid-template-columns: minmax(300px, 360px) minmax(0, 1fr); gap: clamp(20px, 2.5vw, 40px); align-items: start; padding-bottom: 40px; }
+      .side { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 16px; }
+      nav { position: static; flex-direction: column; gap: 10px; padding: 0; border: none; overflow: visible; background: none; }
+      nav a { padding: 16px 18px; font-size: var(--fs-md); border-radius: 12px; display: grid; grid-template-columns: 2.2em 1fr; align-items: center; column-gap: 8px; }
+      nav a i { grid-row: span 2; font-size: 1.6em; margin: 0; text-align: center; }
+      nav a small { display: block; font-weight: 400; font-size: var(--fs-sm); color: var(--muted); margin-top: 2px; }
+      nav a.on small { color: #2c3a08; }
+      nav a:not(.on):hover { border-color: var(--lime); }
+      .side-info { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; font-size: var(--fs-sm); color: var(--muted); line-height: 1.75; }
+      .side-info b { color: var(--ink); }
+      .side-info .tag { display: inline-block; font: 700 var(--fs-xs) 'JetBrains Mono', monospace; color: var(--lime); letter-spacing: .08em; margin-bottom: 6px; }
+      main { padding: 0; }
+    }
+
+    /* 主面板 */
+    .panel { display: none; background: var(--surface); border: 1px solid var(--line); border-left: 6px solid var(--lime); border-radius: 12px; padding: clamp(18px, 2.4vw, 36px); }
     .panel.on { display: block; }
-    .panel h2 { font-size: 22px; line-height: 1.4; margin: 0 0 14px; }
-    .panel h3 { font-size: 19px; margin: 22px 0 10px; padding-top: 16px; border-top: 1px dashed var(--line); }
+    .panel h2 { font-size: var(--fs-xl); line-height: 1.35; margin: 0 0 clamp(14px, 1.6vw, 24px); font-weight: 900; }
+    .panel h3 { font-size: var(--fs-lg); margin: 30px 0 14px; padding-top: 22px; border-top: 1px dashed var(--line); }
     .panel h3:first-of-type { margin-top: 4px; padding-top: 0; border-top: none; }
-    input { width: 100%; font: inherit; font-size: 18px; padding: 14px; border-radius: 8px; border: 1px solid var(--line); background: #0a0d10; color: var(--ink); }
-    input:focus { outline: none; border-color: var(--lime); }
-    button.send { width: 100%; margin-top: 10px; font: inherit; font-size: 18px; font-weight: 900; padding: 14px; border: none; border-radius: 8px; background: var(--lime); color: #11151b; cursor: pointer; }
+    input { width: 100%; font: inherit; font-size: var(--fs-lg); padding: 16px 18px; border-radius: 10px; border: 1px solid var(--line); background: #0a0d10; color: var(--ink); }
+    input:focus { outline: none; border-color: var(--lime); box-shadow: 0 0 0 3px rgba(198,244,50,.2); }
+    button.send { width: 100%; margin-top: 12px; font: inherit; font-size: var(--fs-lg); font-weight: 900; padding: 16px; border: none; border-radius: 10px; background: var(--lime); color: #11151b; cursor: pointer; }
+    button.send:hover { filter: brightness(1.06); }
     button.send:disabled { opacity: .5; }
-    .opt { display: block; width: 100%; text-align: left; font: inherit; font-size: 18px; padding: 14px 16px; margin-bottom: 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface2); color: var(--ink); cursor: pointer; }
-    .opt.mine { border-color: var(--lime); background: rgba(198,244,50,.1); font-weight: 700; }
-    .opt.mine::after { content: '　✓ 你的選擇'; color: var(--lime); font-size: 14px; }
-    .msg { min-height: 24px; margin-top: 10px; color: var(--cyan); font-weight: 700; }
-    .hint { color: var(--muted); font-size: 14px; margin-top: 6px; line-height: 1.7; }
-    .warn { background: #2e2410; color: var(--amber); padding: 10px 12px; border-radius: 8px; font-size: 14px; margin-bottom: 12px; display: none; }
+    .wc-row { display: grid; gap: 12px; }
+    @media (min-width: 1000px) { .wc-row { grid-template-columns: minmax(0, 1fr) 220px; } .wc-row button.send { margin-top: 0; } }
+    .opts { display: grid; gap: 12px; }
+    @media (min-width: 1000px) { .opts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .opt { display: flex; align-items: center; width: 100%; min-height: 72px; text-align: left; font: inherit; font-size: var(--fs-lg); font-weight: 700; padding: 16px 20px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface2); color: var(--ink); cursor: pointer; transition: border-color .15s, transform .1s; }
+    .opt:hover { border-color: var(--lime); }
+    .opt:active { transform: scale(.99); }
+    .opt.mine { border: 2px solid var(--lime); background: rgba(198,244,50,.1); }
+    .opt.mine::after { content: '✓ 你的選擇'; margin-left: auto; padding-left: 12px; color: var(--lime); font-size: var(--fs-sm); white-space: nowrap; }
+    .msg { min-height: 1.6em; margin-top: 12px; color: var(--cyan); font-weight: 700; font-size: var(--fs-md); }
+    .hint { color: var(--muted); font-size: var(--fs-sm); margin-top: 10px; line-height: 1.7; }
+    .help { margin-top: 22px; padding: 14px 18px; border-radius: 10px; background: rgba(255,181,71,.08); border: 1px solid rgba(255,181,71,.35); color: var(--ink); font-size: var(--fs-base); }
+    .help b { color: var(--amber); }
+    .warn { background: #2e2410; color: var(--amber); padding: 12px 14px; border-radius: 10px; font-size: var(--fs-sm); margin-bottom: 14px; display: none; }
     .offline .warn { display: block; }
-    .links a { display: block; padding: 13px 16px; margin-bottom: 10px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: var(--ink); font-weight: 700; background: var(--surface2); }
-    .links a:hover { border-color: var(--lime); }
-    .links a small { display: block; font-weight: 400; color: var(--muted); font-size: 14px; margin-top: 2px; }
+
+    /* 全部連結：多欄卡片 */
+    .lgrid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+    .lgrid a { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: var(--fs-md); background: var(--surface2); line-height: 1.45; transition: border-color .15s, transform .15s; }
+    .lgrid a:hover { border-color: var(--lime); transform: translateY(-2px); }
+    .lgrid a .em { font-size: 1.5em; line-height: 1.1; flex: none; }
+    .lgrid a small { display: block; font-weight: 400; color: var(--muted); font-size: var(--fs-sm); margin-top: 4px; }
+    .lgrid a.key { border-color: rgba(198,244,50,.55); }
     .links h3 { color: var(--lime); }
-    footer { text-align: center; font-size: 13px; color: var(--muted); padding: 0 16px 24px; }
+
+    footer { text-align: center; font-size: var(--fs-sm); color: var(--muted); padding: 10px 16px 28px; }
     footer a { color: var(--lime); }
   </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <small>NTPC WORKSHOP · 2026.12.02 WED</small>
-    <h1>教學效率升級：PaGamO 實用攻略｜互動參與</h1>
+    <div>
+      <small>NTPC WORKSHOP · 2026.12.02 WED 14:00–16:00</small>
+      <h1>教學效率升級：PaGamO 實用攻略<span>｜互動參與</span></h1>
+    </div>
+    <a class="deck-btn" href="index.html" target="_blank" rel="noopener">🖥️ 打開研習簡報 ↗</a>
   </header>
-  <nav>
-    <a href="#open" data-tab="open">破冰文字雲</a>
-    <a href="#setup" data-tab="setup">實作進度</a>
-    <a href="#feedback" data-tab="feedback">會後回饋</a>
-    <a href="#links" data-tab="links">全部連結</a>
-  </nav>
-  <main>
-    <div class="warn">目前是本機預覽，互動功能要部署後才會連線。</div>
-    <section class="panel" id="p-open"><div data-wc="open"></div></section>
-    <section class="panel" id="p-setup">
-      <div data-poll="setup"></div>
-      <p class="hint">卡住了？到「全部連結」看圖文說明（含手動安裝），或在 Meet 聊天室打「卡在第幾步」。</p>
-    </section>
-    <section class="panel" id="p-feedback">
-      <h2>花一分鐘，給阿凱老師一點回饋</h2>
-      <h3>1. 今天的研習，你給幾顆星？</h3><div data-poll="rate" data-plain></div>
-      <h3>2. 回去最想先用哪一條路出題？</h3><div data-poll="use" data-plain></div>
-      <h3>3. 今天最有收穫的一個詞？</h3><div data-wc="gain" data-plain></div>
-    </section>
-    <section class="panel links" id="p-links">
-      <h2>今天用到的全部連結</h2>
-      <h3>路線 A：PIRLS 閱讀題組小幫手（Chrome 擴充套件）</h3>
-      <a href="https://chromewebstore.google.com/detail/cfbehdinangicblpbnockoofeccmoidp" target="_blank" rel="noopener">🧩 加到 Chrome（免費）<small>Chrome 線上應用程式商店</small></a>
-      <a href="https://cagoooo.github.io/pirls-questioncraft/extension/" target="_blank" rel="noopener">📘 圖文安裝與使用說明<small>學校電腦不能從商店安裝時，這裡有手動安裝步驟</small></a>
-      <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">🔑 到 Google AI Studio 申請金鑰<small>用個人 Gmail 登入，不要用學校信箱，才能使用免費額度</small></a>
-      <a href="practice-low.html" target="_blank" rel="noopener">📝 練習短文・低年級〈小番茄長大了〉<small>講師自編，約 300 字，適合一、二年級</small></a>
-      <a href="practice.html" target="_blank" rel="noopener">📝 練習短文・中年級〈雨水撲滿〉<small>講師自編，約 450 字，適合三、四年級</small></a>
-      <a href="practice-high.html" target="_blank" rel="noopener">📝 練習短文・高年級〈城市裡的蜜蜂旅館〉<small>講師自編，約 750 字，適合五、六年級</small></a>
-      <a href="https://youtu.be/Pn3XxfHRySw" target="_blank" rel="noopener">🎬 擴充套件教學影片（約 5 分鐘）<small>基本操作，有字幕</small></a>
-      <h3>路線 B：Gemini 技能＋PaGamO 題組下載器</h3>
-      <a href="https://cagoooo.github.io/pagamo-gemini/skill.html" target="_blank" rel="noopener">🤖 下載 Gemini 技能＋安裝教學<small>下載 SKILL.md，到 Gemini 技能頁上傳</small></a>
-      <a href="https://cagoooo.github.io/pagamo-gemini/" target="_blank" rel="noopener">📥 PaGamO 題組下載器<small>貼上題組資料，下載可上傳 PaGamO 的題組 Excel；第一次打開請加入書籤</small></a>
-      <a href="https://youtube.com/shorts/gf_jWJgjn2w" target="_blank" rel="noopener">🎬 題組下載器 40 秒短片</a>
-      <a href="https://youtu.be/VPUuUjXlqLw" target="_blank" rel="noopener">🎬 題組下載器 3 分鐘完整教學</a>
-      <h3>PaGamO 與其他</h3>
-      <a href="https://www.pagamo.org/api/teacher_console/questions/add_questions/batch" target="_blank" rel="noopener">⬆️ PaGamO 批量上傳頁<small>新北老師請先從新北市親師生平台登入 PaGamO；題型記得選「題組」</small></a>
-      <a href="https://pts.ntpc.edu.tw/" target="_blank" rel="noopener">🔐 新北市親師生平台（登入 PaGamO 的入口）<small>pts.ntpc.edu.tw，右上角「登入」</small></a>
-      <a href="index.html" target="_blank" rel="noopener">🖥️ 今天的研習簡報<small>cagoooo.github.io/pagamo-ntpc-1202</small></a>
-      <a href="https://cagoooo.github.io/Akai/" target="_blank" rel="noopener">🛠️ 阿凱老師教育科技創新專區<small>更多教學小工具</small></a>
-    </section>
-  </main>
+  <div class="layout">
+    <aside class="side">
+      <nav aria-label="互動項目">
+        <a href="#open" data-tab="open"><i>💬</i>破冰文字雲<small>開場：最花時間的是哪一步？</small></a>
+        <a href="#setup" data-tab="setup"><i>🛠️</i>實作進度<small>15:00 休息時回報做到哪一步</small></a>
+        <a href="#feedback" data-tab="feedback"><i>⭐</i>會後回饋<small>研習最後填，花一分鐘就好</small></a>
+        <a href="#links" data-tab="links"><i>🔗</i>全部連結<small>安裝、練習短文、教學影片</small></a>
+      </nav>
+      <div class="side-info">
+        <span class="tag">TODAY</span><br>
+        <b>2026.12.02（三）14:00–16:00</b><br>
+        新北市教師線上研習（Google Meet）<br>
+        講師：阿凱老師・桃園市龍潭區石門國民小學 資訊組長<br>
+        <span style="display:block;margin-top:8px">這頁的回答會<b>即時出現在研習簡報</b>上，不用登入、不記名。</span>
+      </div>
+    </aside>
+    <main>
+      <div class="warn">目前是本機預覽，互動功能要部署後才會連線。</div>
+      <section class="panel" id="p-open"><div data-wc="open"></div></section>
+      <section class="panel" id="p-setup">
+        <div data-poll="setup"></div>
+        <div class="help"><b>卡住了？</b>到「全部連結」看圖文說明（含手動安裝），或在 Meet 聊天室打「卡在第幾步」。</div>
+      </section>
+      <section class="panel" id="p-feedback">
+        <h2>花一分鐘，給阿凱老師一點回饋</h2>
+        <h3>1. 今天的研習，你給幾顆星？</h3><div data-poll="rate" data-plain></div>
+        <h3>2. 回去最想先用哪一條路出題？</h3><div data-poll="use" data-plain></div>
+        <h3>3. 今天最有收穫的一個詞？</h3><div data-wc="gain" data-plain></div>
+      </section>
+      <section class="panel links" id="p-links">
+        <h2>今天用到的全部連結</h2>
+        <h3>路線 A：PIRLS 閱讀題組小幫手（Chrome 擴充套件）</h3>
+        <div class="lgrid">
+          <a href="https://chromewebstore.google.com/detail/cfbehdinangicblpbnockoofeccmoidp" target="_blank" rel="noopener" class="key"><span class="em">🧩</span><span>加到 Chrome（免費）<small>Chrome 線上應用程式商店</small></span></a>
+          <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener" class="key"><span class="em">🔑</span><span>到 Google AI Studio 申請金鑰<small>用個人 Gmail 登入，不要用學校信箱，才能使用免費額度</small></span></a>
+          <a href="https://cagoooo.github.io/pirls-questioncraft/extension/" target="_blank" rel="noopener"><span class="em">📘</span><span>圖文安裝與使用說明<small>學校電腦不能從商店安裝時，這裡有手動安裝步驟</small></span></a>
+          <a href="https://youtu.be/Pn3XxfHRySw" target="_blank" rel="noopener"><span class="em">🎬</span><span>擴充套件教學影片（約 5 分鐘）<small>基本操作，有字幕</small></span></a>
+        </div>
+        <h3>實作練習短文（選你教的年級）</h3>
+        <div class="lgrid">
+          <a href="practice-low.html" target="_blank" rel="noopener"><span class="em">🌱</span><span>低年級〈小番茄長大了〉<small>講師自編・約 300 字・適合一、二年級</small></span></a>
+          <a href="practice.html" target="_blank" rel="noopener"><span class="em">💧</span><span>中年級〈雨水撲滿〉<small>講師自編・約 450 字・適合三、四年級</small></span></a>
+          <a href="practice-high.html" target="_blank" rel="noopener"><span class="em">🐝</span><span>高年級〈城市裡的蜜蜂旅館〉<small>講師自編・約 750 字・適合五、六年級</small></span></a>
+        </div>
+        <h3>路線 B：Gemini 技能＋PaGamO 題組下載器</h3>
+        <div class="lgrid">
+          <a href="https://cagoooo.github.io/pagamo-gemini/skill.html" target="_blank" rel="noopener" class="key"><span class="em">🤖</span><span>下載 Gemini 技能＋安裝教學<small>下載 SKILL.md，到 Gemini 技能頁上傳</small></span></a>
+          <a href="https://cagoooo.github.io/pagamo-gemini/" target="_blank" rel="noopener" class="key"><span class="em">📥</span><span>PaGamO 題組下載器<small>貼上題組資料，下載題組 Excel；第一次打開請加入書籤</small></span></a>
+          <a href="https://youtube.com/shorts/gf_jWJgjn2w" target="_blank" rel="noopener"><span class="em">🎬</span><span>題組下載器 40 秒短片</span></a>
+          <a href="https://youtu.be/VPUuUjXlqLw" target="_blank" rel="noopener"><span class="em">🎬</span><span>題組下載器 3 分鐘完整教學</span></a>
+        </div>
+        <h3>PaGamO 與其他</h3>
+        <div class="lgrid">
+          <a href="https://pts.ntpc.edu.tw/" target="_blank" rel="noopener" class="key"><span class="em">🔐</span><span>新北市親師生平台<small>新北老師登入 PaGamO 的入口，右上角「登入」</small></span></a>
+          <a href="https://www.pagamo.org/api/teacher_console/questions/add_questions/batch" target="_blank" rel="noopener"><span class="em">⬆️</span><span>PaGamO 批量上傳頁<small>先登入 PaGamO；題型記得選「題組」</small></span></a>
+          <a href="index.html" target="_blank" rel="noopener"><span class="em">🖥️</span><span>今天的研習簡報<small>cagoooo.github.io/pagamo-ntpc-1202</small></span></a>
+          <a href="https://cagoooo.github.io/Akai/" target="_blank" rel="noopener"><span class="em">🛠️</span><span>阿凱老師教育科技創新專區<small>更多教學小工具</small></span></a>
+        </div>
+      </section>
+    </main>
+  </div>
   <footer>
     Made with ❤️ by
     <a href="https://cagoooo.github.io/Akai/" target="_blank" rel="noopener noreferrer">阿凱老師</a>
@@ -122,8 +199,8 @@
   document.querySelectorAll('[data-wc]').forEach((p) => {
     const key = p.dataset.wc;
     p.innerHTML = (p.hasAttribute('data-plain') ? '' : `<h2>${esc(WORDCLOUDS[key].q)}</h2>`) +
-      `<input type="text" maxlength="20" placeholder="${esc(WORDCLOUDS[key].hint)}" aria-label="輸入答案" />
-      <button class="send" type="button">送出</button>
+      `<div class="wc-row"><input type="text" maxlength="20" placeholder="${esc(WORDCLOUDS[key].hint)}" aria-label="輸入答案" />
+      <button class="send" type="button">送出</button></div>
       <div class="hint">可以送出很多次，每次一個詞（20 字內）。</div>
       <div class="msg" aria-live="polite"></div>`;
     const input = p.querySelector('input');
@@ -147,7 +224,7 @@
     const key = p.dataset.poll;
     const cfg = POLLS[key];
     p.innerHTML = (p.hasAttribute('data-plain') ? '' : `<h2>${esc(cfg.q)}</h2>`) +
-      cfg.options.map((o) => `<button class="opt" type="button" data-opt="${o.id}">${esc(o.label)}</button>`).join('') +
+      '<div class="opts">' + cfg.options.map((o) => `<button class="opt" type="button" data-opt="${o.id}">${esc(o.label)}</button>`).join('') + '</div>' +
       '<div class="hint">可以改選，以最後一次為準。</div><div class="msg" aria-live="polite"></div>';
     const mark = () => p.querySelectorAll('.opt').forEach((b) => b.classList.toggle('mine', b.dataset.opt === myVote(key)));
     p.addEventListener('click', async (e) => {
